@@ -1,0 +1,124 @@
+body {
+  margin: 0;
+  background: #d9d9d9;
+  font-family: Futura, "Century Gothic", Arial, sans-serif;
+  min-height: 100vh;
+  text-align: center;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  padding: 20px 40px;
+  position: relative;
+}
+
+h1 {
+  margin: 0;
+  font-size: 2rem;
+  font-weight: 400;
+}
+
+h3 {
+  max-width: 700px;
+  margin: 2rem auto 1rem auto;
+  /* top, right, bottom, left */
+  padding: 0 20px;
+}
+
+.logo-link {
+  text-decoration: none;
+  color: inherit;
+  /* keeps the text color from h1 */
+}
+
+.logo-link:visited {
+  color: inherit;
+  /* no color change after clicking */
+}
+
+.logo-link:hover {
+  opacity: 0.7;
+  /* optional: subtle hover effect */
+}
+
+h1.initials {
+  margin: 0;
+  font-size: 2rem;
+  font-weight: 400;
+}
+
+nav {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 2.5rem;
+  margin: 0;
+  padding: 0;
+}
+
+nav a {
+  text-decoration: none;
+  color: #000;
+  font-size: 1.2rem;
+  transition: opacity 0.3s ease;
+}
+
+nav a:hover {
+  opacity: 0.5;
+}
+
+a {
+  text-decoration: none;
+  color: #000;
+  font-size: 1.2rem;
+  transition: opacity 0.3s ease;
+}
+
+a:hover {
+  opacity: 0.5;
+}
+
+p {
+  max-width: 700px;
+  /* keeps lines from getting too long */
+  margin: 0 auto;
+  /* centers the text block */
+  padding: 0 20px;
+  /* adds space on sides for mobile */
+  line-height: 1.6;
+  /* comfortable reading spacing */
+  font-size: 1rem;
+  text-align: left;
+  /* left-aligned text is easier to read */
+  margin-bottom: 1.5rem;
+}
+
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  nav {
+    position: static;
+    transform: none;
+  }
+
+  nav ul {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  p {
+    font-size: 0.95rem;
+    padding: 0 15px;
+    max-width: 100%;
+  }
+}
