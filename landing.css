@@ -35,8 +35,8 @@ h1 {
 .figure1 {
   position: absolute;
   bottom: 15%;
-  left: 35%;
-  width: 300px;
+  left: 50%;
+  width: 380px;
   border: 2px red;
 }
 
@@ -51,8 +51,16 @@ h1 {
 .figure3 {
   position: absolute;
   top: 5%;
-  left: 20%;
-  width: 200px;
+  left: 25%;
+  width: 380px;
+  border: 2px red;
+}
+
+.figure4 {
+  position: absolute;
+  top: 60%;
+  left: 15%;
+  width: 380px;
   border: 2px red;
 }
 
