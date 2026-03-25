@@ -6,6 +6,10 @@ body {
   text-align: left;
 }
 
+#newblackbg {
+  background-color: black;
+}
+
 ul {
   list-style-type: none;
 }
@@ -173,7 +177,7 @@ nav a:hover {
     left: 0;
     transform: none;
     width: 100%;
-    background: #d9d9d9;
+    background: black;
     padding: 1rem 0;
     z-index: 99;
   }
