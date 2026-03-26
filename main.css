@@ -187,10 +187,12 @@ nav a:hover {
     align-items: center;
     gap: 1.5rem;
   }
-}
 
-#ascii {
+#ascii,
+#media {
+  padding-top: 20px;
   display: block;
   margin: 0 auto;
   width: fit-content;
 }
+
