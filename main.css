@@ -188,3 +188,9 @@ nav a:hover {
     gap: 1.5rem;
   }
 }
+
+#ascii {
+  display: block;
+  margin: 0 auto;
+  width: fit-content;
+}
