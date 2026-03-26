@@ -64,6 +64,19 @@ h1 {
   border: 2px red;
 }
 
+.figure1:hover {
+  opacity: 0.5;
+}
+.figure2:hover {
+  opacity: 0.5;
+}
+.figure3:hover {
+  opacity: 0.5;
+}
+.figure4:hover {
+  opacity: 0.5;
+}
+
 @media (max-width: 768px) {
   h1 {
     font-size: 2.5rem;
