@@ -64,6 +64,15 @@ h1 {
   border: 2px red;
 }
 
+.figure1:hover,
+.figure2:hover,
+.figure3:hover,
+.figure4:hover {
+  opacity: 0.5;
+  transition: 2ms;
+  cursor: pointer;
+}
+
 @media (max-width: 768px) {
   h1 {
     font-size: 2.5rem;
