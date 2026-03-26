@@ -188,3 +188,14 @@ nav a:hover {
     gap: 1.5rem;
   }
 }
+<<<<<<< Updated upstream
+=======
+
+#ascii,
+#media {
+  padding-top: 20px;
+  display: block;
+  margin: 0 auto;
+  width: fit-content;
+}
+>>>>>>> Stashed changes
