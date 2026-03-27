@@ -9,8 +9,12 @@ burger.addEventListener("click", () => {
 
 document.querySelector("#code-link").addEventListener("click", (e) => {
   e.preventDefault();
+  window.location.href = "code.html";
+});
+
+if (window.location.pathname.includes("code.html")) {
   document.querySelector("nav").style.color = "white";
   document.body.style.transition = "background-color 2s";
   document.body.style.backgroundColor = "black";
   document.body.style.color = "white";
-});
+}
