@@ -161,7 +161,9 @@ nav a:hover {
     align-items: center;
     padding: 15px 20px;
   }
-
+  #ascii {
+    font-size: 0.5rem;
+  }
   .burger {
     display: flex;
   }
