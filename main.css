@@ -225,3 +225,8 @@ article a {
   font-size: 1rem; /* smaller than the global 1.2rem */
   margin-top: 0.5rem; /* small gap above the link */
 }
+img {
+  display: block;
+  margin: 1.7rem auto;
+  max-width: 100%;
+}
