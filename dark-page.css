@@ -48,7 +48,7 @@
 }
 
 @media (max-width: 400px) {
-  pre {
+  .dark-mode pre {
     font-size: 0.3rem;
     overflow-x: auto;
     max-width: 100%;
