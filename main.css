@@ -218,3 +218,10 @@ footer {
   margin: 0 auto;
   width: fit-content;
 }
+
+article a {
+  display: block; /* makes it respect text-align */
+  text-align: center; /* centres it */
+  font-size: 1rem; /* smaller than the global 1.2rem */
+  margin-top: 0.5rem; /* small gap above the link */
+}
