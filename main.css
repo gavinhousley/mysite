@@ -4,6 +4,8 @@ body {
   font-family: Futura, "Century Gothic", Arial, sans-serif;
   min-height: 100vh;
   text-align: left;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
 }
 
 ul {
@@ -154,6 +156,24 @@ nav a:hover {
   justify-content: center;
 }
 
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+  padding: 20px;
+  font-size: 0.4rem;
+}
+
+.fab {
+  font-size: 28px;
+  color: #000000;
+  transition: color 0.2s ease;
+}
+
+.fab:hover {
+  color: #000;
+}
 /* ─── Mobile ─── */
 @media (max-width: 768px) {
   header {

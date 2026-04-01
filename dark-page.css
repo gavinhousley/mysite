@@ -1,0 +1,48 @@
+/* Body */
+.dark-mode {
+  background-color: black;
+  color: white;
+  transition: background-color 2s;
+}
+
+/* General links */
+.dark-mode a {
+  color: white;
+}
+
+/* Nav desktop */
+.dark-mode nav a {
+  color: white;
+}
+
+/* Nav mobile panel */
+@media (max-width: 768px) {
+  .dark-mode nav {
+    background: black;
+  }
+}
+
+/* Burger lines */
+.dark-mode .burger span {
+  background: white;
+}
+
+/* Footer icons */
+.dark-mode .fab {
+  color: white;
+}
+
+.dark-mode .fab:hover {
+  color: #ccc;
+}
+
+/* Footer links */
+.dark-mode footer a {
+  color: white;
+}
+
+/* Pre / ASCII art */
+.dark-mode pre {
+  color: white;
+  overflow-x: auto;
+}
