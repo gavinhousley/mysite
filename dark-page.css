@@ -47,6 +47,8 @@
   overflow-x: auto;
 }
 
+/* Mobile display small */
+
 @media (max-width: 400px) {
   .dark-mode pre {
     font-size: 0.3rem !important;
