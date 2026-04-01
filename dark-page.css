@@ -46,3 +46,17 @@
   color: white;
   overflow-x: auto;
 }
+
+@media (max-width: 400px) {
+  pre {
+    font-size: 0.3rem;
+    overflow-x: auto;
+    max-width: 100%;
+  }
+
+  img {
+    max-width: 100%;
+    width: 100%;
+    height: auto;
+  }
+}
