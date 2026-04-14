@@ -8,7 +8,7 @@ let paddleX = (canvas.width - paddleWidth) / 2;
 let rightPressed = false;
 let leftPressed = false;
 
-let touchX = 0;
+let touchX = 0; // mobile addition
 
 let x = canvas.width / 2;
 let y = canvas.height - 30;
@@ -61,9 +61,10 @@ function drawBricks() {
 document.addEventListener("keydown", keyDownHandler);
 document.addEventListener("keyup", keyUpHandler);
 document.addEventListener("mousemove", mouseMoveHandler);
-document.addEventListener("touchmove", handleTouchMove);
+document.addEventListener("touchmove", handleTouchMove); //mobile addition
 
 function handleTouchMove(e) {
+  // mobile addition
   const touch = e.touches[0];
   touchX = touch.clientX - canvas.offsetLeft;
 }
