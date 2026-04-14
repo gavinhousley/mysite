@@ -8,11 +8,13 @@ let paddleX = (canvas.width - paddleWidth) / 2;
 let rightPressed = false;
 let leftPressed = false;
 
+let touchX = 0;
+
 let x = canvas.width / 2;
 let y = canvas.height - 30;
 
-let dx = 8;
-let dy = -8;
+let dx = 7;
+let dy = -7;
 
 const ballRadius = 10;
 let interval = 0;
@@ -59,6 +61,12 @@ function drawBricks() {
 document.addEventListener("keydown", keyDownHandler);
 document.addEventListener("keyup", keyUpHandler);
 document.addEventListener("mousemove", mouseMoveHandler);
+document.addEventListener("touchmove", handleTouchMove);
+
+function handleTouchMove(e) {
+  const touch = e.touches[0];
+  touchX = touch.clientX - canvas.offsetLeft;
+}
 
 function mouseMoveHandler(e) {
   const relativeX = e.clientX - canvas.offsetLeft;
@@ -176,8 +184,8 @@ function draw() {
       } else {
         x = canvas.width / 2;
         y = canvas.height - 30;
-        dx = 8;
-        dy = -8;
+        dx = 7;
+        dy = -7;
         paddleX = (canvas.width - paddleWidth) / 2;
       }
     }
