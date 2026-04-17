@@ -201,7 +201,7 @@ function drawStartScreen() {
   ctx.font = "20px Futura";
   ctx.fillText(
     "Tap or Click to Begin",
-    canvas.width / 2,it 
+    canvas.width / 2,
     canvas.height / 2 + 10,
   );
 }
