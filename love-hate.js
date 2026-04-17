@@ -8,13 +8,13 @@ let paddleX = (canvas.width - paddleWidth) / 2;
 let rightPressed = false;
 let leftPressed = false;
 
-let touchX = 0; // mobile addition
+let touchX = null;
 
 let x = canvas.width / 2;
 let y = canvas.height - 30;
 
-let dx = 7;
-let dy = -7;
+let dx = 5;
+let dy = -5;
 
 const ballRadius = 10;
 let interval = 0;
@@ -38,57 +38,93 @@ for (let c = 0; c < brickColumnCount; c++) {
   }
 }
 
+let lastTime = 0;
+
+function gameLoop(timestamp) {
+  if (!lastTime) lastTime = timestamp;
+  let delta = (timestamp - lastTime) / 1000;
+  lastTime = timestamp;
+
+  update(delta);
+  draw();
+
+  requestAnimationFrame(gameLoop);
+}
+
+function update(delta) {
+  const speedScale = 60;
+
+  // ball movement
+  x += dx * delta * speedScale;
+  y += dy * delta * speedScale;
+
+  // keyboard paddle
+  if (rightPressed) {
+    paddleX = Math.min(
+      paddleX + 7 * delta * speedScale,
+      canvas.width - paddleWidth,
+    );
+  } else if (leftPressed) {
+    paddleX = Math.max(paddleX - 7 * delta * speedScale, 0);
+  }
+
+  // mobile paddle
+  if (touchX !== null) {
+    paddleX = touchX - paddleWidth / 2;
+  }
+
+  collisionDetection();
+  handleWalls();
+}
+
+function handleWalls() {
+  if (x + dx > canvas.width - ballRadius || x + dx < ballRadius) {
+    dx = -dx;
+  }
+
+  if (y + dy < ballRadius) {
+    dy = -dy;
+  } else if (y + dy > canvas.height - ballRadius) {
+    if (
+      y + dy > canvas.height - paddleHeight - ballRadius &&
+      x > paddleX &&
+      x < paddleX + paddleWidth
+    ) {
+      let relativeHit = (x - (paddleX + paddleWidth / 2)) / (paddleWidth / 2);
+      dx = relativeHit * 7; // tweak for angles
+
+      dy = -Math.abs(dy);
+    } else {
+      lives--;
+      if (!lives) {
+        alert("GAME OVER - THE HATERS HAVE WON ...FOR NOW");
+        document.location.reload();
+      } else {
+        x = canvas.width / 2;
+        y = canvas.height - 30;
+        dx = 5;
+        dy = -5;
+        paddleX = (canvas.width - paddleWidth) / 2;
+      }
+    }
+  }
+}
+
 function drawBricks() {
   for (let c = 0; c < brickColumnCount; c++) {
     for (let r = 0; r < brickRowCount; r++) {
-      if (bricks[c][r].status === 1) {
+      const b = bricks[c][r];
+      if (b.status === 1) {
         const brickX = c * (brickWidth + brickPadding) + brickOffsetLeft;
         const brickY = r * (brickHeight + brickPadding) + brickOffsetTop;
-        bricks[c][r].x = brickX;
-        bricks[c][r].y = brickY;
-        //   ctx.beginPath();
-        //   ctx.rect(brickX, brickY, brickWidth, brickHeight);
-        //   ctx.fillStyle = "#000000";
-        //   ctx.fill();
-        //   ctx.closePath();
+        b.x = brickX;
+        b.y = brickY;
+
         ctx.font = "16px Futura";
         ctx.fillStyle = "#000000";
         ctx.fillText("HATE", brickX, brickY);
       }
     }
-  }
-}
-document.addEventListener("keydown", keyDownHandler);
-document.addEventListener("keyup", keyUpHandler);
-document.addEventListener("mousemove", mouseMoveHandler);
-document.addEventListener("touchmove", handleTouchMove); //mobile addition
-
-function handleTouchMove(e) {
-  // mobile addition
-  const touch = e.touches[0];
-  touchX = touch.clientX - canvas.offsetLeft;
-}
-
-function mouseMoveHandler(e) {
-  const relativeX = e.clientX - canvas.offsetLeft;
-  if (relativeX > 0 && relativeX < canvas.width) {
-    paddleX = relativeX - paddleWidth / 2;
-  }
-}
-
-function keyDownHandler(e) {
-  if (e.key === "Right" || e.key === "ArrowRight") {
-    rightPressed = true;
-  } else if (e.key === "Left" || e.key === "ArrowLeft") {
-    leftPressed = true;
-  }
-}
-
-function keyUpHandler(e) {
-  if (e.key === "Right" || e.key === "ArrowRight") {
-    rightPressed = false;
-  } else if (e.key === "Left" || e.key === "ArrowLeft") {
-    leftPressed = false;
   }
 }
 
@@ -139,13 +175,6 @@ function drawBall() {
 }
 
 function drawPaddle() {
-  // ctx.beginPath();
-  // ctx.rect(
-  //   paddleX,
-  //   canvas.height - paddleHeight,
-  //   paddleWidth,
-  //   paddleHeight,
-  // );
   ctx.font = "20px Futura";
   ctx.fillStyle = "#000000";
   ctx.fillText(
@@ -155,8 +184,6 @@ function drawPaddle() {
     paddleWidth,
     paddleHeight,
   );
-  // ctx.fill();
-  // ctx.closePath();
 }
 
 function draw() {
@@ -166,45 +193,46 @@ function draw() {
   drawPaddle();
   drawScore();
   drawLives();
-  collisionDetection();
-  x += dx;
-  y += dy;
-  if (x + dx > canvas.width - ballRadius || x + dx < ballRadius) {
-    dx = -dx;
-  }
-  if (y + dy < ballRadius) {
-    dy = -dy;
-  } else if (y + dy > canvas.height - ballRadius) {
-    if (x > paddleX && x < paddleX + paddleWidth) {
-      dy = -dy;
-    } else {
-      lives--;
-      if (!lives) {
-        alert("GAME OVER - THE HATERS HAVE WON ...FOR NOW");
-        document.location.reload();
-      } else {
-        x = canvas.width / 2;
-        y = canvas.height - 30;
-        dx = 7;
-        dy = -7;
-        paddleX = (canvas.width - paddleWidth) / 2;
-      }
-    }
-  }
-  if (rightPressed) {
-    paddleX = Math.min(paddleX + 7, canvas.width - paddleWidth);
-  } else if (leftPressed) {
-    paddleX = Math.max(paddleX - 7, 0);
-  }
-  requestAnimationFrame(draw);
 }
 
-function startGame() {
-  draw();
+document.addEventListener("keydown", keyDownHandler);
+document.addEventListener("keyup", keyUpHandler);
+document.addEventListener("mousemove", mouseMoveHandler);
+
+document.addEventListener("touchstart", handleTouchMove);
+document.addEventListener("touchmove", handleTouchMove);
+document.addEventListener("touchend", () => (touchX = null));
+
+function handleTouchMove(e) {
+  const touch = e.touches[0];
+  touchX = touch.clientX - canvas.offsetLeft;
+}
+
+function mouseMoveHandler(e) {
+  const relativeX = e.clientX - canvas.offsetLeft;
+  if (relativeX > 0 && relativeX < canvas.width) {
+    paddleX = relativeX - paddleWidth / 2;
+  }
+}
+
+function keyDownHandler(e) {
+  if (e.key === "Right" || e.key === "ArrowRight") {
+    rightPressed = true;
+  } else if (e.key === "Left" || e.key === "ArrowLeft") {
+    leftPressed = true;
+  }
+}
+
+function keyUpHandler(e) {
+  if (e.key === "Right" || e.key === "ArrowRight") {
+    rightPressed = false;
+  } else if (e.key === "Left" || e.key === "ArrowLeft") {
+    leftPressed = false;
+  }
 }
 
 const runButton = document.getElementById("runButton");
 runButton.addEventListener("click", () => {
-  startGame();
+  requestAnimationFrame(gameLoop);
   runButton.disabled = true;
 });
