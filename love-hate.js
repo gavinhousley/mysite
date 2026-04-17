@@ -1,6 +1,8 @@
 const canvas = document.getElementById("myCanvas");
 const ctx = canvas.getContext("2d");
 
+let loopRunning = false;
+
 const paddleHeight = 10;
 const paddleWidth = 50;
 let paddleX = (canvas.width - paddleWidth) / 2;
@@ -20,6 +22,7 @@ const ballRadius = 10;
 let interval = 0;
 let score = 0;
 let lives = 3;
+let gameState = "start";
 
 const brickRowCount = 7;
 const brickColumnCount = 7;
@@ -41,6 +44,8 @@ for (let c = 0; c < brickColumnCount; c++) {
 let lastTime = 0;
 
 function gameLoop(timestamp) {
+  if (!loopRunning) return;
+
   if (!lastTime) lastTime = timestamp;
   let delta = (timestamp - lastTime) / 1000;
   lastTime = timestamp;
@@ -52,6 +57,8 @@ function gameLoop(timestamp) {
 }
 
 function update(delta) {
+  if (gameState !== "playing") return;
+
   const speedScale = 60;
 
   // ball movement
@@ -97,8 +104,8 @@ function handleWalls() {
     } else {
       lives--;
       if (!lives) {
-        alert("GAME OVER - THE HATERS HAVE WON ...FOR NOW");
-        document.location.reload();
+        gameState = "gameover";
+        loopRunning = false;
       } else {
         x = canvas.width / 2;
         y = canvas.height - 30;
@@ -143,10 +150,8 @@ function collisionDetection() {
           b.status = 0;
           score += 10;
           if (score / 10 === brickRowCount * brickColumnCount) {
-            alert(
-              `WELL DONE, THE LOVE IS STRONG IN YOU. YOU HAVE DEFEATED THE HATERS!`,
-            );
-            document.location.reload();
+            gameState = "gameComplete";
+            loopRunning = false;
           }
         }
       }
@@ -186,8 +191,79 @@ function drawPaddle() {
   );
 }
 
-function draw() {
+function drawStartScreen() {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
+  ctx.font = "32px Futura";
+  ctx.fillStyle = "#000";
+  ctx.textAlign = "center";
+  ctx.fillText("LOVE vs HATE", canvas.width / 2, canvas.height / 2 - 40);
+
+  ctx.font = "20px Futura";
+  ctx.fillText(
+    "Tap or Click to Begin",
+    canvas.width / 2,it 
+    canvas.height / 2 + 10,
+  );
+}
+
+function drawGameOverScreen() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  ctx.font = "32px Futura";
+  ctx.fillStyle = "#000";
+  ctx.textAlign = "center";
+  ctx.fillText("GAME OVER", canvas.width / 2, canvas.height / 2 - 40);
+
+  ctx.font = "20px Futura";
+  ctx.fillText(
+    "The haters have won, for now...",
+    canvas.width / 2,
+    canvas.height / 2,
+  );
+  ctx.fillText(
+    "Tap or Click to Restart",
+    canvas.width / 2,
+    canvas.height / 2 + 40,
+  );
+}
+
+function drawGameCompleteScreen() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  ctx.font = "32px Futura";
+  ctx.fillStyle = "#000";
+  ctx.textAlign = "center";
+  ctx.fillText("YOU WIN !!!", canvas.width / 2, canvas.height / 2 - 40);
+
+  ctx.font = "20px Futura";
+  ctx.fillText(
+    "The love is strong in you, young master",
+    canvas.width / 2,
+    canvas.height / 2,
+  );
+  ctx.fillText(
+    "Tap or Click to Restart",
+    canvas.width / 2,
+    canvas.height / 2 + 40,
+  );
+}
+
+function draw() {
+  if (gameState === "start") {
+    drawStartScreen();
+    return;
+  }
+  if (gameState === "gameover") {
+    drawGameOverScreen();
+    return;
+  }
+  if (gameState === "gameComplete") {
+    drawGameCompleteScreen();
+    return;
+  }
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+  ctx.textAlign = "left";
+  ctx.textBaseline = "alphabetic";
+
   drawBricks();
   drawBall();
   drawPaddle();
@@ -231,8 +307,40 @@ function keyUpHandler(e) {
   }
 }
 
-const runButton = document.getElementById("runButton");
-runButton.addEventListener("click", () => {
-  requestAnimationFrame(gameLoop);
-  runButton.disabled = true;
+canvas.addEventListener("click", () => {
+  if (gameState === "start") {
+    gameState = "playing";
+    lastTime = 0;
+    if (!loopRunning) {
+      loopRunning = true;
+      requestAnimationFrame(gameLoop);
+    }
+  } else if (gameState === "gameover" || gameState === "gameComplete") {
+    resetGame();
+    gameState = "playing";
+    lastTime = 0;
+    if (!loopRunning) {
+      loopRunning = true;
+      requestAnimationFrame(gameLoop);
+    }
+  }
 });
+
+function resetGame() {
+  x = canvas.width / 2;
+  y = canvas.height - 30;
+  dx = 5;
+  dy = -5;
+  paddleX = (canvas.width - paddleWidth) / 2;
+  lives = 3;
+  score = 0;
+  lastTime = 0;
+
+  for (let c = 0; c < brickColumnCount; c++) {
+    for (let r = 0; r < brickRowCount; r++) {
+      bricks[c][r].status = 1;
+    }
+  }
+}
+
+draw();
