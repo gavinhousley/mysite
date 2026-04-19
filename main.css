@@ -217,13 +217,13 @@ footer {
 }
 .screenshot-row {
   display: flex;
-  justify-content: center;
+  justify-content: left;
   gap: 20px;
 }
 
 .screenshot-row img {
   width: auto;
-  height: 220px;
+  height: 300px;
   object-fit: contain;
 }
 
@@ -235,7 +235,8 @@ footer {
     padding-bottom: 12px;
   }
   .screenshot-row img {
-    width: 160px;
+    width: 220px;
+    height: auto;
     scroll-snap-align: start;
     flex-shrink: 0;
   }
@@ -270,4 +271,47 @@ canvas {
 #runButton {
   display: block;
   margin: 0 auto;
+}
+
+.audio-canvas {
+  background: #eeeeee;
+  display: block;
+  margin: 0 auto;
+}
+
+#audio-player {
+  display: block;
+  margin: 20px auto;
+  width: 380px; /* or a fixed width like 300px */
+}
+
+#now-playing {
+  white-space: nowrap;
+  overflow: hidden;
+  width: 80%;
+  margin: 0 auto;
+  text-align: left;
+}
+
+#now-playing span {
+  display: inline-block;
+  animation: ticker 40s linear infinite;
+  animation-play-state: paused;
+}
+
+@keyframes ticker {
+  0% {
+    transform: translateX(50vw);
+  }
+  100% {
+    transform: translateX(-100vw);
+  }
+}
+
+.visualiser-section {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: #d9d9d9;
+  padding: 10px 0;
 }
