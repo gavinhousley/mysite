@@ -218,12 +218,13 @@ footer {
 .screenshot-row {
   display: flex;
   justify-content: center;
-  gap: 5px;
+  gap: 20px;
 }
 
 .screenshot-row img {
-  width: 180px;
-  height: auto;
+  width: auto;
+  height: 220px;
+  object-fit: contain;
 }
 
 @media (max-width: 600px) {
@@ -234,6 +235,7 @@ footer {
     padding-bottom: 12px;
   }
   .screenshot-row img {
+    width: 160px;
     scroll-snap-align: start;
     flex-shrink: 0;
   }
