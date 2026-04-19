@@ -57,8 +57,9 @@ function draw() {
 
 audio.addEventListener("play", () => {
   initVisualiser();
-  audioCtx.resume();
-  draw();
+  audioCtx.resume().then(() => {
+    draw();
+  });
 });
 
 audio.addEventListener("pause", () => {
