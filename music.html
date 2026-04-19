@@ -36,8 +36,18 @@
     </header>
 
     <main>
+      <div class="visualiser-section">
+        <canvas id="visualiser" width="400" height="140"></canvas>
+        <audio id="audio-player" controls></audio>
+        <p id="now-playing"></p>
+      </div>
+
       <section class="albums">
-        <article class="album">
+        <article
+          class="album"
+          data-track="/audio/04 Halfway There.m4a"
+          data-title="Halfway There by Sicamore"
+        >
           <h2>SICAMORE</h2>
           <p>
             "Halfway There" - Encyclopaedia Records 2026 | Gavin Housley -
@@ -67,6 +77,7 @@
               >
             </li>
           </ul>
+          <button class="play-album">Play Halfway There</button>
         </article>
 
         <article class="album">
@@ -230,5 +241,8 @@
       ></a>
     </footer>
     <script src="main.js"></script>
+    <script src="audio.js"></script>
+    <script src="visualiser.js"></script>
+    <script src="player.js"></script>
   </body>
 </html>
