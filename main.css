@@ -343,3 +343,7 @@ canvas {
   padding: 16px 0;
   border-style: none;
 }
+
+#dev-buttons p {
+  text-align: center;
+}
