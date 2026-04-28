@@ -329,3 +329,17 @@ canvas {
   padding: 0.3rem 0.8rem;
   border-style: none;
 }
+
+#dev-buttons button {
+  display: block;
+  width: 300px;
+  color: white;
+  background-color: black;
+  font-family: Futura, "Century Gothic", Arial, sans-serif;
+  font-size: 18px;
+  text-align: center;
+  border-radius: 25rem;
+  margin: 15px auto;
+  padding: 16px 0;
+  border-style: none;
+}
