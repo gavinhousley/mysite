@@ -347,3 +347,15 @@ canvas {
 #dev-buttons p {
   text-align: center;
 }
+
+form {
+  text-align: center;
+  display: flexbox;
+  color: white;
+  font-size: 15px;
+  background-color: #000;
+  border-radius: 25rem;
+  width: 380px;
+  margin: 0 auto;
+  padding: 20px 0px 1px 0px;
+}
