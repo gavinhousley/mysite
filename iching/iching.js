@@ -66,6 +66,22 @@ function buildHexagram(lines) {
   return hexagrams.find((h) => h.number === hexNumber);
 }
 
+function hasChangingLines(lines) {
+  return lines.some((line) => line.changing === true);
+}
+
+function getSecondHexagram() {
+  const secondHex = thrownLines.map((line) => {
+    if (line.value === 6) return { ...line, value: 7 };
+    if (line.value === 9) return { ...line, value: 8 };
+    return line;
+  });
+
+  const secondThrow = buildHexagram(secondHex);
+
+  return secondThrow;
+}
+
 const testLines = [
   { position: 1, value: 9, solid: true, changing: true },
   { position: 2, value: 8, solid: false, changing: false },
@@ -76,3 +92,5 @@ const testLines = [
 ];
 
 console.log(buildHexagram(testLines));
+thrownLines = testLines;
+console.log(getSecondHexagram());
