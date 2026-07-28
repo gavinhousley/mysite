@@ -26,19 +26,14 @@ const hexagramLookup = [
 ];
 
 function throwLine() {
-  let line = 0;
-  const lineThrow = Math.floor(Math.random() * 16);
+  const randomPart = Math.random() * 8;
+  const humanPart = Date.now() % 8;
+  const combined = Math.floor(randomPart + humanPart) % 16;
 
-  if (lineThrow === 0) {
-    line = 6;
-  } else if (lineThrow < 8) {
-    line = 8;
-  } else if (lineThrow < 13) {
-    line = 7;
-  } else {
-    line = 9;
-  }
-  return line;
+  if (combined === 0) return 6;
+  if (combined < 8) return 8;
+  if (combined < 13) return 7;
+  return 9;
 }
 
 function isSolid(value) {
@@ -91,6 +86,26 @@ const testLines = [
   { position: 6, value: 9, solid: true, changing: true },
 ];
 
-console.log(buildHexagram(testLines));
-thrownLines = testLines;
-console.log(getSecondHexagram());
+const throwButton = document.getElementById("throw-button");
+
+throwButton.addEventListener("click", handleThrow);
+
+function handleThrow() {
+  const value = throwLine();
+
+  thrownLines.push({
+    position: currentPosition + 1,
+    value: value,
+    solid: isSolid(value),
+    changing: isChanging(value),
+  });
+
+  currentPosition++;
+
+  console.log(thrownLines);
+
+  if (currentPosition === 6) {
+    console.log("all lines thrown");
+    console.log(buildHexagram(thrownLines));
+  }
+}
