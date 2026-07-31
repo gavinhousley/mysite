@@ -91,7 +91,19 @@ const throwButton = document.getElementById("throw-button");
 throwButton.addEventListener("click", handleThrow);
 
 function displayReading() {
-  console.log("reading goes here");
+  const hexagram = buildHexagram(thrownLines);
+
+  document.getElementById("hex-number").textContent = hexagram.number;
+  document.getElementById("hex-name").textContent = hexagram.englishName;
+  document.getElementById("hex-description").textContent = hexagram.description;
+  document.getElementById("judgment-text").textContent = hexagram.judgment;
+  document.getElementById("judgment-commentary").textContent =
+    hexagram.judgmentCommentary;
+  document.getElementById("image-text").textContent = hexagram.image;
+  document.getElementById("image-commentary").textContent =
+    hexagram.imageCommentary;
+
+  const changingLines = thrownLines.filter((line) => line.changing === true);
 }
 
 function handleThrow() {
