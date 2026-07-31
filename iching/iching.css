@@ -1,0 +1,32 @@
+.line {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 8px 0;
+  max-width: 150px;
+}
+
+.bar {
+  height: 4px;
+  background: black;
+  flex: 1;
+}
+
+.bars {
+  display: flex;
+  flex: 1;
+  gap: 30px;
+}
+
+.bar.left,
+.bar.right {
+  height: 4px;
+  background: black;
+  flex: 1;
+}
+
+.value {
+  width: 20px;
+  font-size: 14px;
+  color: #333;
+}

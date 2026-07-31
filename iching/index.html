@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="iching.css" />
     <script type="module" src="iching.js"></script>
     <title>The I-Ching or Book of Changes</title>
   </head>
@@ -13,24 +14,34 @@
     <button id="throw-button">THROW</button>
     <button id="stop-button">STOP</button>
 
-    <div class="line" id="line-1"></div>
-    <div class="line" id="line-2"></div>
-    <div class="line" id="line-3"></div>
-    <div class="line" id="line-4"></div>
-    <div class="line" id="line-5"></div>
     <div class="line" id="line-6"></div>
+    <div class="line" id="line-5"></div>
+    <div class="line" id="line-4"></div>
+    <div class="line" id="line-3"></div>
+    <div class="line" id="line-2"></div>
+    <div class="line" id="line-1"></div>
 
     <div id="reading">
-      <h3 id="reading-title"></h3>
-
-      <p>Your reading will appear here</p>
-      <div id="judgement"><p>Your judgement will appear here</p></div>
-      <div id="image"><p>Your image will appear here</p></div>
-      <div id="lines"><p>Your lines will appear here</p></div>
+      <h2 id="hex-number"></h2>
+      <h3 id="hex-name"></h3>
+      <p id="hex-description"></p>
+      <div id="judgment">
+        <p id="judgment-text"></p>
+        <p id="judgment-commentary"></p>
+      </div>
+      <div id="image">
+        <p id="image-text"></p>
+        <p id="image-commentary"></p>
+      </div>
+      <div id="changing-lines"></div>
     </div>
 
     <div id="second-reading">
-      <p>Your 2nd reading will appear here</p>
+      <h3 id="second-hex-name"></h3>
+      <p id="second-judgment-text"></p>
+      <p id="second-judgment-commentary"></p>
+      <p id="second-image-text"></p>
+      <p id="second-image-commentary"></p>
     </div>
   </body>
 </html>

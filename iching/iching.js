@@ -90,22 +90,41 @@ const throwButton = document.getElementById("throw-button");
 
 throwButton.addEventListener("click", handleThrow);
 
+function displayReading() {
+  console.log("reading goes here");
+}
+
 function handleThrow() {
   const value = throwLine();
 
-  thrownLines.push({
+  const lineObj = {
     position: currentPosition + 1,
     value: value,
     solid: isSolid(value),
     changing: isChanging(value),
-  });
+  };
 
+  thrownLines.push(lineObj);
   currentPosition++;
 
-  console.log(thrownLines);
+  renderLine(lineObj);
 
   if (currentPosition === 6) {
-    console.log("all lines thrown");
-    console.log(buildHexagram(thrownLines));
+    throwButton.disabled = true;
+    displayReading();
+  }
+}
+
+function renderLine(lineObj) {
+  const lineRender = document.getElementById("line-" + lineObj.position);
+  if (lineObj.solid) {
+    lineRender.innerHTML = `<span class="value">${lineObj.value}</span><span class="bar"></span>`;
+  } else {
+    lineRender.innerHTML = `<span class="value">${lineObj.value}</span>
+    <span class="bars">
+      <span class="bar left"></span>
+      <span class="bar right"></span>
+    </span>  
+      `;
   }
 }
