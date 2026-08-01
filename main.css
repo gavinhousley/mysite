@@ -359,3 +359,13 @@ form {
   margin: 0 auto;
   padding: 20px 0px 1px 0px;
 }
+
+article {
+  margin-bottom: 60px;
+  padding-bottom: 60px;
+  border-bottom: 2px solid #333;
+}
+
+article:last-child {
+  border-bottom: none;
+}
