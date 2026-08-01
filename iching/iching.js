@@ -97,8 +97,8 @@ document
 function displayReading() {
   const hexagram = buildHexagram(thrownLines);
 
-  document.getElementById("hex-number").textContent = hexagram.number;
-  document.getElementById("hex-name").textContent = hexagram.englishName;
+  document.getElementById("hex-title").textContent =
+    `${hexagram.number}. ${hexagram.chineseName} / ${hexagram.englishName}`;
   document.getElementById("hex-description").textContent = hexagram.description;
   document.getElementById("judgment-text").textContent = hexagram.judgment;
   document.getElementById("judgment-commentary").textContent =
