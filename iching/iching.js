@@ -109,11 +109,17 @@ function displayReading() {
     const changingLineReading = changingLines.map((line) =>
       hexagram.lines.find((l) => l.position === line.position),
     );
-    console.log(changingLineReading);
-    changingLineReading.forEach((el) => {
-      document.getElementById("changing-lines").innerHTML = el.title;
-      document.getElementById("changing-lines").innerHTML = el.text;
-    });
+
+    const changingHTML = changingLineReading
+      .map(
+        (el) => `
+    <h4>${el.title}</h4>
+    <p>${el.text}</p>
+    <p>${el.commentary}</p>`,
+      )
+      .join("");
+
+    document.getElementById("changing-lines").innerHTML = changingHTML;
   }
 }
 
