@@ -137,9 +137,10 @@ function handleThrow() {
   renderLine(lineObj);
 
   if (currentPosition === 6) {
+    const shiftAmount = window.innerWidth <= 480 ? "-130px" : "-60px";
     throwButton.classList.add("hidden");
-    document.getElementById("lines-container").style.marginTop = "-60px"; // added
-    document.getElementById("reading").style.marginTop = "-60px"; // added
+    document.getElementById("reading-layout").style.marginTop = shiftAmount; // added
+
     displayReading();
   }
 }
