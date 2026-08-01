@@ -90,6 +90,9 @@ const testLines = [
 const throwButton = document.getElementById("throw-button");
 
 throwButton.addEventListener("click", handleThrow);
+document
+  .getElementById("second-reading-button")
+  .addEventListener("click", displaySecondReading);
 
 function displayReading() {
   const hexagram = buildHexagram(thrownLines);
@@ -105,6 +108,7 @@ function displayReading() {
     hexagram.imageCommentary;
 
   if (hasChangingLines(thrownLines)) {
+    document.getElementById("second-reading-button").style.display = "block";
     const changingLines = thrownLines.filter((line) => line.changing === true);
     const changingLineReading = changingLines.map((line) =>
       hexagram.lines.find((l) => l.position === line.position),
@@ -124,6 +128,9 @@ function displayReading() {
 }
 
 function handleThrow() {
+  if (currentPosition === 0) {
+    document.getElementById("intro").classList.add("hidden");
+  }
   const value = throwLine();
 
   const lineObj = {
@@ -156,4 +163,22 @@ function renderLine(lineObj) {
     </span>  
       `;
   }
+}
+
+function displaySecondReading() {
+  const secondHexagram = getSecondHexagram(thrownLines);
+  document.getElementById("second-hex-number").textContent =
+    secondHexagram.number;
+  document.getElementById("second-hex-name").textContent =
+    secondHexagram.englishName;
+  document.getElementById("second-hex-description").textContent =
+    secondHexagram.description;
+  document.getElementById("second-judgment-text").textContent =
+    secondHexagram.judgment;
+  document.getElementById("second-judgment-commentary").textContent =
+    secondHexagram.judgmentCommentary;
+  document.getElementById("second-image-text").textContent =
+    secondHexagram.image;
+  document.getElementById("second-image-commentary").textContent =
+    secondHexagram.imageCommentary;
 }

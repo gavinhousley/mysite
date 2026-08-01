@@ -10,9 +10,13 @@
 
   <body>
     <h1>I-CHING</h1>
-    <p>The Book of Changes as Program</p>
+    <p id="intro">
+      An introduction to the Book of Changes, for when you are away from your
+      copy. This is a personal project. Check footer for a link to purchase the
+      Wilhelm translation if you don't have an edition.
+    </p>
     <button id="throw-button">THROW</button>
-    <button id="stop-button">STOP</button>
+    <button id="reset-button" style="display: none"></button>
 
     <div class="line" id="line-6"></div>
     <div class="line" id="line-5"></div>
@@ -33,9 +37,13 @@
         <p id="image-text"></p>
         <p id="image-commentary"></p>
       </div>
+
       <div id="changing-lines"></div>
     </div>
 
+    <button id="second-reading-button" style="display: none">
+      A second hexagram has emerged
+    </button>
     <div id="second-reading">
       <h2 id="second-hex-number"></h2>
       <h3 id="second-hex-name"></h3>
