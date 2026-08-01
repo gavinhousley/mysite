@@ -5,13 +5,13 @@ let currentPosition = 0;
 
 const trigrams = {
   h111: 0, // Heaven
-  h001: 1, // Thunder
+  h100: 1, // Thunder
   h010: 2, // Water
-  h100: 3, // Mountain
+  h001: 3, // Mountain
   h000: 4, // Earth
-  h110: 5, // Wind
+  h011: 5, // Wind
   h101: 6, // Fire
-  h011: 7, // Lake
+  h110: 7, // Lake
 };
 
 const hexagramLookup = [
@@ -49,14 +49,15 @@ function buildHexagram(lines) {
 
   let lowerTri = binary.slice(0, 3);
   let upperTri = binary.slice(3, 6);
-
+  console.log(lowerTri);
+  console.log(upperTri);
   const lowerTriStr = "h" + lowerTri.join("");
   const upperTriStr = "h" + upperTri.join("");
 
   const lowerTriNum = trigrams[lowerTriStr];
   const upperTriNum = trigrams[upperTriStr];
 
-  const hexNumber = hexagramLookup[upperTriNum][lowerTriNum];
+  const hexNumber = hexagramLookup[lowerTriNum][upperTriNum];
 
   return hexagrams.find((h) => h.number === hexNumber);
 }
@@ -103,7 +104,17 @@ function displayReading() {
   document.getElementById("image-commentary").textContent =
     hexagram.imageCommentary;
 
-  const changingLines = thrownLines.filter((line) => line.changing === true);
+  if (hasChangingLines(thrownLines)) {
+    const changingLines = thrownLines.filter((line) => line.changing === true);
+    const changingLineReading = changingLines.map((line) =>
+      hexagram.lines.find((l) => l.position === line.position),
+    );
+    console.log(changingLineReading);
+    changingLineReading.forEach((el) => {
+      document.getElementById("changing-lines").innerHTML = el.title;
+      document.getElementById("changing-lines").innerHTML = el.text;
+    });
+  }
 }
 
 function handleThrow() {
