@@ -9,6 +9,10 @@ body {
   line-height: 1.5;
 }
 
+h1 {
+  text-align: center;
+}
+
 #intro {
   opacity: 1;
   max-height: 140px;
@@ -41,16 +45,25 @@ body {
   opacity: 0;
 }
 
+#throw-button {
+  margin: 0 auto;
+}
 #second-reading-button {
   margin: 60px auto;
   display: block;
+}
+
+#throw-button,
+#second-reading-button {
+  color: black;
+  -webkit-appearance: none;
 }
 
 #lines-container {
   float: left;
   margin-right: 40px;
   width: 150px;
-  height: 220px;
+  height: 244px;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -112,7 +125,7 @@ body {
   }
 
   body {
-    font-size: 1rem;
+    font-size: 1.2rem;
     padding: 15px;
   }
 }
