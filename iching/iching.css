@@ -240,11 +240,6 @@ footer a:hover {
   padding: 16px 0;
 }
 
-#hex-description {
-  font-size: 1rem;
-  color: #444;
-}
-
 #changing-lines-section {
   display: none;
 }
