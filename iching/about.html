@@ -1,0 +1,289 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,600;1,400&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="iching.css" />
+    <title>About — The I Ching</title>
+  </head>
+  <body>
+    <h1>I-CHING</h1>
+
+    <nav>
+      <a href="index.html" class="oracle-button">< BEGIN A READING</a>
+    </nav>
+
+    <div id="about">
+      <h2>What is the I Ching?</h2>
+      <p>
+        The I Ching or the Book of Changes, is one of the oldest texts in
+        existence, originating in China over three thousand years ago. It is at
+        once a book of divination, a work of philosophy, and a meditation on
+        change.
+      </p>
+      <p>
+        The I Ching works through sixty-four hexagrams, figures made of six
+        lines, each either solid or broken. The combination of lines you throw
+        points you to a hexagram and its reading. A question is posed in the
+        mind whilst the lines are being formed. And the lines are marked down
+        from the bottom up.
+      </p>
+
+      <h2>The Wilhelm Translation</h2>
+      <p>
+        I came to the I Ching through Carl Jung, who wrote the foreword to
+        Richard Wilhelm's translation and whose concept of synchronicity offers
+        one way of understanding how the oracle works. Wilhelm spent years in
+        China studying the text with Chinese scholars, and his translation
+        remains the most complete and philosophically rich edition available in
+        English. He translated it into German, and Cary F. Baynes translated it
+        from German into English. You will notice translation comments
+        throughout the book when a German word has no English counterpart.
+        <br />
+        It has been on my shelf for over ten years. And although I believe in
+        its power, I use it to give me advice and comfort in the form of an
+        answer in times of need. There is no wrong or bad answer, to the modern
+        mind it is always thought provoking. A way to be in contact with some of
+        the old balancing ways.
+      </p>
+
+      <h2>How This App Works</h2>
+      <p>
+        For many years I used the three coin method: shaking three coins in my
+        hands and releasing them, adding their values to produce a line. Heads =
+        3, and Tails = 2.
+      </p>
+      <p>Repeat six times, building your hexagram from the bottom up.</p>
+
+      <table>
+        <tr>
+          <th>Total</th>
+          <th>Line</th>
+          <th>Type</th>
+        </tr>
+        <tr>
+          <td>2 2 2</td>
+          <td>6</td>
+          <td>Old yin — changing broken line</td>
+        </tr>
+        <tr>
+          <td>3 3 2 or variant</td>
+          <td>8</td>
+          <td>Young yin — stable broken line</td>
+        </tr>
+        <tr>
+          <td>2 2 3 or variant</td>
+          <td>7</td>
+          <td>Young yang — stable solid line</td>
+        </tr>
+        <tr>
+          <td>3 3 3</td>
+          <td>9</td>
+          <td>Old yang — changing solid line</td>
+        </tr>
+      </table>
+
+      <p>
+        This app uses the four coin method under the hood, which more closely
+        replicates the probabilities of the traditional yarrow stalk method. See
+        below for the how-to. But in the app as you are simply pushing a button,
+        I have factored in some more randomisation based on the timestamp of
+        when the button is pressed, combined with a standard math randomisation
+        algorithm both combining to give the yarrow stalk 1/16 probability
+        result. But it is an approximation. There is a reason the original
+        method took so long, it was to give you the time to contemplate. Again
+        why I reccomend that this app is only an introduction.
+      </p>
+      <h2>The Four Coin Method</h2>
+      <p>
+        With four physical coins, toss them and arrange them left to right in
+        the order they have landed. Heads = 1 and Tails = 0. After six throws
+        (from the bottom up remember) you will have in effect four binary
+        sequences of 1's and zero's - e.g 1001, 1110, 0001, 1111, etc. You will
+        probably need to create a lookup table for this, similar to the
+        hexagrams themselves in your notebook, here is one i made earlier:
+      </p>
+
+      <table>
+        <tr>
+          <th>Coins</th>
+          <th>Binary</th>
+          <th>Total</th>
+          <th>Line</th>
+          <th>Type</th>
+        </tr>
+        <tr>
+          <td>T T T T</td>
+          <td>0000</td>
+          <td>0</td>
+          <td>6</td>
+          <td>Old yin — changing broken</td>
+        </tr>
+        <tr>
+          <td>T T T H</td>
+          <td>0001</td>
+          <td>1</td>
+          <td>8</td>
+          <td>Young yin — stable broken</td>
+        </tr>
+        <tr>
+          <td>T T H T</td>
+          <td>0010</td>
+          <td>2</td>
+          <td>8</td>
+          <td>Young yin — stable broken</td>
+        </tr>
+        <tr>
+          <td>T T H H</td>
+          <td>0011</td>
+          <td>3</td>
+          <td>8</td>
+          <td>Young yin — stable broken</td>
+        </tr>
+        <tr>
+          <td>T H T T</td>
+          <td>0100</td>
+          <td>4</td>
+          <td>8</td>
+          <td>Young yin — stable broken</td>
+        </tr>
+        <tr>
+          <td>T H T H</td>
+          <td>0101</td>
+          <td>5</td>
+          <td>8</td>
+          <td>Young yin — stable broken</td>
+        </tr>
+        <tr>
+          <td>T H H T</td>
+          <td>0110</td>
+          <td>6</td>
+          <td>8</td>
+          <td>Young yin — stable broken</td>
+        </tr>
+        <tr>
+          <td>T H H H</td>
+          <td>0111</td>
+          <td>7</td>
+          <td>8</td>
+          <td>Young yin — stable broken</td>
+        </tr>
+        <tr>
+          <td>H T T T</td>
+          <td>1000</td>
+          <td>8</td>
+          <td>7</td>
+          <td>Young yang — stable solid</td>
+        </tr>
+        <tr>
+          <td>H T T H</td>
+          <td>1001</td>
+          <td>9</td>
+          <td>7</td>
+          <td>Young yang — stable solid</td>
+        </tr>
+        <tr>
+          <td>H T H T</td>
+          <td>1010</td>
+          <td>10</td>
+          <td>7</td>
+          <td>Young yang — stable solid</td>
+        </tr>
+        <tr>
+          <td>H T H H</td>
+          <td>1011</td>
+          <td>11</td>
+          <td>7</td>
+          <td>Young yang — stable solid</td>
+        </tr>
+        <tr>
+          <td>H H T T</td>
+          <td>1100</td>
+          <td>12</td>
+          <td>7</td>
+          <td>Young yang — stable solid</td>
+        </tr>
+        <tr>
+          <td>H H T H</td>
+          <td>1101</td>
+          <td>13</td>
+          <td>9</td>
+          <td>Old yang — changing solid</td>
+        </tr>
+        <tr>
+          <td>H H H T</td>
+          <td>1110</td>
+          <td>14</td>
+          <td>9</td>
+          <td>Old yang — changing solid</td>
+        </tr>
+        <tr>
+          <td>H H H H</td>
+          <td>1111</td>
+          <td>15</td>
+          <td>9</td>
+          <td>Old yang — changing solid</td>
+        </tr>
+      </table>
+
+      <h2>How to Read a Hexagram</h2>
+      <p>
+        Once your six lines are thrown, you have a hexagram. Read the judgment
+        and the image — these are the core of the reading. If you have changing
+        lines (a 6 or 9 in your throw), read those line commentaries too; they
+        speak to the specific tensions in your situation. The changing lines
+        then transform into their opposite, producing a second hexagram which
+        shows where things are moving.
+      </p>
+      <p>
+        The book contains a lookup table at the back — find your lower trigram
+        (lines one to three) down the left side, and your upper trigram (lines
+        four to six) across the top. The number at the intersection is your
+        hexagram.
+      </p>
+      <p>
+        The I Ching rewards slow reading and quiet reflection. It is not a
+        fortune telling machine. It is a mirror.
+      </p>
+
+      <h2>A Note on This App</h2>
+      <p>
+        This is a personal project, built as a digital companion to the physical
+        book. It is not a substitute for it. The app uses the Wilhelm
+        translation throughout.
+      </p>
+
+      <nav>
+        <a href="index.html" class="oracle-button">< BEGIN A READING</a>
+      </nav>
+    </div>
+
+    <footer>
+      <p>
+        A digital companion to the Book of Changes. For the full depth of the
+        tradition the book is irreplaceable.
+      </p>
+      <a
+        href="https://uk.bookshop.org/a/17132/9780691284576"
+        target="_blank"
+        class="oracle-button"
+        >Wilhelm/Baynes translation — Paperback</a
+      >
+      <a
+        href="https://uk.bookshop.org/a/17132/9780691097503"
+        target="_blank"
+        class="oracle-button"
+        >Wilhelm/Baynes translation — Hardback</a
+      >
+
+      <p class="copyright">
+        Wilhelm/Baynes translation © Princeton University Press. Personal
+        project only, not for commercial use.
+      </p>
+    </footer>
+  </body>
+</html>
