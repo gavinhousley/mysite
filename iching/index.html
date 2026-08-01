@@ -15,7 +15,8 @@
   <body>
     <h1>I-CHING</h1>
     <p id="intro">
-      A digital companion to the Book of Changes. <br />Press the button six times, holding your question in mind between each throw.
+      A digital companion to the Book of Changes. <br />Press the button six
+      times, holding your question in mind between each throw.
     </p>
     <button id="throw-button" class="oracle-button">THROW</button>
     <button id="reset-button" style="display: none"></button>
@@ -33,56 +34,83 @@
         <h2 id="hex-title"></h2>
         <p id="hex-description"></p>
         <div id="judgment">
+          <p class="section-label">The Judgment</p>
           <p id="judgment-text"></p>
           <p id="judgment-commentary"></p>
         </div>
         <div id="image">
+          <p class="section-label">The Image</p>
           <p id="image-text"></p>
           <p id="image-commentary"></p>
         </div>
       </div>
 
-      <div id="changing-lines"></div>
+      <div id="changing-lines-section">
+        <p class="section-label">The Lines</p>
+        <div id="changing-lines"></div>
+      </div>
     </div>
-</div>
-    <button id="second-reading-button" class="oracle-button" style="display: none">
+    <button
+      id="second-reading-button"
+      class="oracle-button"
+      style="display: none"
+    >
       A SECOND HEXAGRAM HAS EMERGED
     </button>
-<div id="second-layout">
-    <div id="second-lines-container">
-      <div class="line" id="second-line-6"></div>
-      <div class="line" id="second-line-5"></div>
-      <div class="line" id="second-line-4"></div>
-      <div class="line" id="second-line-3"></div>
-      <div class="line" id="second-line-2"></div>
-      <div class="line" id="second-line-1"></div>
+    <div id="second-layout">
+      <div id="second-lines-container">
+        <div class="line" id="second-line-6"></div>
+        <div class="line" id="second-line-5"></div>
+        <div class="line" id="second-line-4"></div>
+        <div class="line" id="second-line-3"></div>
+        <div class="line" id="second-line-2"></div>
+        <div class="line" id="second-line-1"></div>
+      </div>
+
+      <div id="second-reading">
+        <h2 id="second-hex-title"></h2>
+        <p id="second-hex-description"></p>
+        <div id="second-judgment">
+          <p class="section-label">The Judgment</p>
+          <p id="second-judgment-text"></p>
+          <p id="second-judgment-commentary"></p>
+        </div>
+        <div id="second-image">
+          <p class="section-label">The Image</p>
+          <p id="second-image-text"></p>
+          <p id="second-image-commentary"></p>
+        </div>
+      </div>
     </div>
 
-    <div id="second-reading">
-      <h2 id="second-hex-title"></h2>
-      <p id="second-hex-description"></p>
-      <div id="second-judgment">
-        <p id="second-judgment-text"></p>
-        <p id="second-judgment-commentary"></p>
-      </div>
-      <div id="second-image">
-        <p id="second-image-text"></p>
-        <p id="second-image-commentary"></p>
-      </div>
-    </div>
-  </div>
+    <footer>
+      <a href="about.html" class="oracle-button">About this app</a>
+      <p>
+        This app is an introduction to the I Ching, and a companion for when you
+        are away from your copy. It is not a substitute for the book. This
+        edition has been on my shelf for over ten years. The links below are
+        affiliate links; if you purchase through them I receive a small
+        commission at no extra cost to you.
+      </p>
+      <a
+        href="https://uk.bookshop.org/a/17132/9780691284576"
+        target="_blank"
+        class="oracle-button"
+      >
+        Wilhelm/Baynes translation — Paperback
+      </a>
+      <a
+        href="https://uk.bookshop.org/a/17132/9780691097503"
+        target="_blank"
+        class="oracle-button"
+      >
+        Wilhelm/Baynes translation — Hardback
+      </a>
 
-  <footer>
-    <a href="about.html" class="oracle-button">About this app</a>
-  <p>This app is an introduction to the I Ching, and a companion for when you are away from your copy. It is not a substitute for the book. This edition has been on my shelf for over ten years. The links below are affiliate links; if you purchase through them I receive a small commission at no extra cost to you.</p>
-  <a href="https://uk.bookshop.org/a/17132/9780691284576" target="_blank" class="oracle-button">
-    Wilhelm/Baynes translation — Paperback
-  </a>
-  <a href="https://uk.bookshop.org/a/17132/9780691097503" target="_blank" class="oracle-button">
-    Wilhelm/Baynes translation — Hardback
-  </a>
-
-  <p class="copyright">Wilhelm/Baynes translation © Princeton University Press. Personal project only, not for commercial use.</p>
-</footer>
+      <p class="copyright">
+        Wilhelm/Baynes translation © Princeton University Press. Personal
+        project only, not for commercial use.
+      </p>
+    </footer>
   </body>
 </html>

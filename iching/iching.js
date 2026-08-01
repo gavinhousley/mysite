@@ -86,6 +86,7 @@ document
   .addEventListener("click", displaySecondReading);
 
 function displayReading() {
+  document.getElementById("reading").style.visibility = "visible";
   const hexagram = buildHexagram(thrownLines);
 
   document.getElementById("hex-title").textContent =
@@ -99,6 +100,7 @@ function displayReading() {
     hexagram.imageCommentary;
 
   if (hasChangingLines(thrownLines)) {
+    document.getElementById("changing-lines-section").style.display = "block";
     document.getElementById("second-reading-button").style.display = "block";
     const changingLines = thrownLines.filter((line) => line.changing === true);
     const changingLineReading = changingLines.map((line) =>
@@ -108,9 +110,10 @@ function displayReading() {
     const changingHTML = changingLineReading
       .map(
         (el) => `
-    <h4>${el.title}</h4>
-    <p>${el.text}</p>
-    <p>${el.commentary}</p>`,
+  <h4 class="line-title">${el.title}</h4>
+  <p class="line-text">${el.text}</p>
+  <p class="line-commentary">${el.commentary}</p>
+`,
       )
       .join("");
 
@@ -162,6 +165,7 @@ function renderLine(lineObj, prefix = "") {
 }
 
 function displaySecondReading() {
+  document.getElementById("second-reading").style.visibility = "visible";
   const result = getSecondHexagram(thrownLines);
   const secondHexagram = result.hexagram;
   const mutatedLines = result.lines;
