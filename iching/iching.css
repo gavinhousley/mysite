@@ -27,10 +27,6 @@ h1 {
   overflow: hidden;
 }
 
-#reading {
-  transition: margin-top 1s ease;
-}
-
 .oracle-button {
   background: none;
   border: 1px solid black;
@@ -52,6 +48,11 @@ h1 {
 #throw-button {
   margin: 0 auto;
 }
+
+#reading {
+  padding-top: 1px;
+}
+
 #second-reading-button {
   margin: 60px auto;
   display: block;
@@ -63,6 +64,10 @@ h1 {
   -webkit-appearance: none;
 }
 
+#reading-layout {
+  transition: margin-top 1s ease;
+}
+
 #lines-container {
   float: left;
   margin-right: 40px;
@@ -71,7 +76,6 @@ h1 {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  transition: margin-top 1s ease;
 }
 
 #second-lines-container {
