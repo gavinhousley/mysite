@@ -3,6 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,600;1,400&family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Noto+Serif:ital,wght@0,400;0,600;1,400&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="iching.css" />
     <script type="module" src="iching.js"></script>
     <title>The I-Ching or Book of Changes</title>
@@ -13,29 +17,30 @@
     <p id="intro">
       An introduction to the Book of Changes, for when you are away from your
       copy. This is a personal project. Check footer for a link to purchase the
-      Wilhelm translation if you don't have an edition.
+      Richard Wilhelm translation if you don't have an edition.
     </p>
     <button id="throw-button">THROW</button>
     <button id="reset-button" style="display: none"></button>
-
-    <div class="line" id="line-6"></div>
-    <div class="line" id="line-5"></div>
-    <div class="line" id="line-4"></div>
-    <div class="line" id="line-3"></div>
-    <div class="line" id="line-2"></div>
-    <div class="line" id="line-1"></div>
-
-    <div id="reading">
-      <h2 id="hex-number"></h2>
-      <h3 id="hex-name"></h3>
-      <p id="hex-description"></p>
-      <div id="judgment">
-        <p id="judgment-text"></p>
-        <p id="judgment-commentary"></p>
+      <div id="lines-container">
+        <div class="line" id="line-6"></div>
+        <div class="line" id="line-5"></div>
+        <div class="line" id="line-4"></div>
+        <div class="line" id="line-3"></div>
+        <div class="line" id="line-2"></div>
+        <div class="line" id="line-1"></div>
       </div>
-      <div id="image">
-        <p id="image-text"></p>
-        <p id="image-commentary"></p>
+
+      <div id="reading">
+        <h2 id="hex-title"></h2>
+        <p id="hex-description"></p>
+        <div id="judgment">
+          <p id="judgment-text"></p>
+          <p id="judgment-commentary"></p>
+        </div>
+        <div id="image">
+          <p id="image-text"></p>
+          <p id="image-commentary"></p>
+        </div>
       </div>
 
       <div id="changing-lines"></div>
