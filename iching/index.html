@@ -17,9 +17,10 @@
     <p id="intro">
       An introduction to the Book of Changes, for when you are away from your
       copy. This is a personal project. Check footer for a link to purchase the
-      Richard Wilhelm translation if you don't have an edition.
+      Richard Wilhelm translation if you don't have an edition.<br/>
+      Press the button six times, thinking about your question and giving space between every press.
     </p>
-    <button id="throw-button">THROW</button>
+    <button id="throw-button" class="oracle-button">THROW</button>
     <button id="reset-button" style="display: none"></button>
       <div id="lines-container">
         <div class="line" id="line-6"></div>
@@ -46,12 +47,21 @@
       <div id="changing-lines"></div>
     </div>
 
-    <button id="second-reading-button" style="display: none">
-      A second hexagram has emerged
+    <button id="second-reading-button" class="oracle-button" style="display: none">
+      A SECOND HEXAGRAM HAS EMERGED
     </button>
+<div id="second-layout">
+    <div id="second-lines-container">
+      <div class="line" id="second-line-6"></div>
+      <div class="line" id="second-line-5"></div>
+      <div class="line" id="second-line-4"></div>
+      <div class="line" id="second-line-3"></div>
+      <div class="line" id="second-line-2"></div>
+      <div class="line" id="second-line-1"></div>
+    </div>
+
     <div id="second-reading">
-      <h2 id="second-hex-number"></h2>
-      <h3 id="second-hex-name"></h3>
+      <h2 id="second-hex-title"></h2>
       <p id="second-hex-description"></p>
       <div id="second-judgment">
         <p id="second-judgment-text"></p>
@@ -62,5 +72,6 @@
         <p id="second-image-commentary"></p>
       </div>
     </div>
+  </div>
   </body>
 </html>

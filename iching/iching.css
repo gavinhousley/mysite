@@ -11,7 +11,7 @@ body {
 
 #intro {
   opacity: 1;
-  max-height: 80px;
+  max-height: 140px;
   transition:
     opacity 1s ease,
     max-height 1s ease;
@@ -23,18 +23,54 @@ body {
   overflow: hidden;
 }
 
-#throw-button {
+.oracle-button {
+  background: none;
+  border: 1px solid black;
+  font-family: "EB Garamond", serif;
+  font-size: 1rem;
+  letter-spacing: 0.2em;
+  cursor: pointer;
+  padding: 8px 24px;
   display: block;
   margin-bottom: 20px;
+  opacity: 1;
+  transition: opacity 1s ease;
+}
+
+.oracle-button.hidden {
+  opacity: 0;
+}
+
+#second-reading-button {
+  margin: 60px auto;
+  display: block;
 }
 
 #lines-container {
-  height: 190px;
   float: left;
-  clear: left;
   margin-right: 40px;
-  margin-bottom: 10px;
   width: 150px;
+  height: 220px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+#second-lines-container {
+  float: left;
+  margin-right: 40px;
+  margin-bottom: 20px;
+  margin-top: -5px;
+  width: 150px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  height: 200px;
+}
+
+#second-layout {
+  margin-top: 40px;
+  clear: both;
 }
 
 .line {
@@ -68,4 +104,15 @@ body {
   width: 20px;
   font-size: 14px;
   color: #333;
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 2rem;
+  }
+
+  body {
+    font-size: 1rem;
+    padding: 15px;
+  }
 }
