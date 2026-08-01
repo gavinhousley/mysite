@@ -49,8 +49,7 @@ function buildHexagram(lines) {
 
   let lowerTri = binary.slice(0, 3);
   let upperTri = binary.slice(3, 6);
-  console.log(lowerTri);
-  console.log(upperTri);
+
   const lowerTriStr = "h" + lowerTri.join("");
   const upperTriStr = "h" + upperTri.join("");
 
@@ -66,26 +65,18 @@ function hasChangingLines(lines) {
   return lines.some((line) => line.changing === true);
 }
 
-function getSecondHexagram() {
-  const secondHex = thrownLines.map((line) => {
+function getSecondHexagram(lines) {
+  const mutated = lines.map((line) => {
     if (line.value === 6) return { ...line, value: 7 };
     if (line.value === 9) return { ...line, value: 8 };
     return line;
   });
 
-  const secondThrow = buildHexagram(secondHex);
-
-  return secondThrow;
+  return {
+    hexagram: buildHexagram(mutated),
+    lines: mutated,
+  };
 }
-
-const testLines = [
-  { position: 1, value: 9, solid: true, changing: true },
-  { position: 2, value: 8, solid: false, changing: false },
-  { position: 3, value: 7, solid: true, changing: false },
-  { position: 4, value: 7, solid: true, changing: false },
-  { position: 5, value: 7, solid: true, changing: false },
-  { position: 6, value: 9, solid: true, changing: true },
-];
 
 const throwButton = document.getElementById("throw-button");
 
@@ -146,13 +137,15 @@ function handleThrow() {
   renderLine(lineObj);
 
   if (currentPosition === 6) {
-    throwButton.disabled = true;
+    throwButton.classList.add("hidden");
     displayReading();
   }
 }
 
-function renderLine(lineObj) {
-  const lineRender = document.getElementById("line-" + lineObj.position);
+function renderLine(lineObj, prefix = "") {
+  const lineRender = document.getElementById(
+    prefix + "line-" + lineObj.position,
+  );
   if (lineObj.solid) {
     lineRender.innerHTML = `<span class="value">${lineObj.value}</span><span class="bar"></span>`;
   } else {
@@ -166,11 +159,16 @@ function renderLine(lineObj) {
 }
 
 function displaySecondReading() {
-  const secondHexagram = getSecondHexagram(thrownLines);
-  document.getElementById("second-hex-number").textContent =
-    secondHexagram.number;
-  document.getElementById("second-hex-name").textContent =
-    secondHexagram.englishName;
+  const result = getSecondHexagram(thrownLines);
+  const secondHexagram = result.hexagram;
+  const mutatedLines = result.lines;
+
+  mutatedLines.forEach((line) => {
+    renderLine(line, "second-");
+  });
+
+  document.getElementById("second-hex-title").textContent =
+    `${secondHexagram.number}. ${secondHexagram.chineseName} / ${secondHexagram.englishName}`;
   document.getElementById("second-hex-description").textContent =
     secondHexagram.description;
   document.getElementById("second-judgment-text").textContent =
