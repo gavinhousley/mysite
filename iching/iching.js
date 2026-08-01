@@ -138,6 +138,8 @@ function handleThrow() {
 
   if (currentPosition === 6) {
     throwButton.classList.add("hidden");
+    document.getElementById("lines-container").style.marginTop = "-60px"; // added
+    document.getElementById("reading").style.marginTop = "-60px"; // added
     displayReading();
   }
 }
