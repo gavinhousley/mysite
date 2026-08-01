@@ -51,6 +51,11 @@ h1 {
 
 #reading {
   padding-top: 1px;
+  visibility: hidden;
+}
+
+#second-reading {
+  visibility: hidden;
 }
 
 #second-reading-button {
@@ -216,4 +221,44 @@ footer a:hover {
   #intro {
     max-height: 150px;
   }
+}
+
+.section-label {
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  margin-top: 24px;
+  margin-bottom: 2px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+#judgment-text,
+#image-text {
+  text-align: center;
+  margin: 0 auto;
+  max-width: 80%;
+  padding: 16px 0;
+}
+
+#hex-description {
+  font-size: 1rem;
+  color: #444;
+}
+
+#changing-lines-section {
+  display: none;
+}
+
+.line-text {
+  font-style: italic;
+}
+
+#judgment-text,
+#image-text,
+#second-judgment-text,
+#second-image-text {
+  text-align: center;
+  margin: 0 auto;
+  max-width: 80%;
+  padding: 16px 0;
 }
