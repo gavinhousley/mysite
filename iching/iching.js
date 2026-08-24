@@ -67,8 +67,8 @@ function hasChangingLines(lines) {
 
 function getSecondHexagram(lines) {
   const mutated = lines.map((line) => {
-    if (line.value === 6) return { ...line, value: 7 };
-    if (line.value === 9) return { ...line, value: 8 };
+    if (line.value === 6) return { ...line, value: 7, solid: isSolid(7) };
+    if (line.value === 9) return { ...line, value: 8, solid: isSolid(8) };
     return line;
   });
 
