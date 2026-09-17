@@ -3,15 +3,10 @@ const canvasCtx = canvas.getContext("2d");
 const WIDTH = canvas.width;
 const HEIGHT = canvas.height;
 
-const BG = "#f7f4ec";
-const TEXT = "#231a12";
-const BLUE = "#2447e0";
-const RED = "#e8362b";
-
-canvasCtx.fillStyle = BG;
+canvasCtx.fillStyle = "#d9d9d9";
 canvasCtx.fillRect(0, 0, WIDTH, HEIGHT);
-canvasCtx.fillStyle = TEXT;
-canvasCtx.font = "14px 'Jost', sans-serif";
+canvasCtx.fillStyle = "#000";
+canvasCtx.font = "14px Futura";
 canvasCtx.textAlign = "center";
 canvasCtx.fillText("Music Player", WIDTH / 2, HEIGHT / 2 - 10);
 canvasCtx.fillText("choose a track below", WIDTH / 2, HEIGHT / 2 + 10);
@@ -38,7 +33,7 @@ function draw() {
   animationId = requestAnimationFrame(draw);
   analyser.getByteFrequencyData(dataArray);
 
-  canvasCtx.fillStyle = BG;
+  canvasCtx.fillStyle = "#d9d9d9";
   canvasCtx.fillRect(0, 0, WIDTH, HEIGHT);
 
   const barWidth = 20;
@@ -46,20 +41,17 @@ function draw() {
   const dashGap = 3;
   const barGap = 8;
   let x = barGap;
-  let barIndex = 0;
 
   for (let i = 5; i < bufferLength; i++) {
     const level = Math.floor(dataArray[i] / 14); // no of dashes
     const totalDashSize = dashHeight + dashGap;
-    const barColor = barIndex % 2 === 0 ? BLUE : RED;
 
     for (let d = 0; d < level; d++) {
       const y = HEIGHT - (d + 1) * totalDashSize; // stack bottom up
-      canvasCtx.fillStyle = barColor;
+      canvasCtx.fillStyle = "rgb(0,0,0)";
       canvasCtx.fillRect(x, y, barWidth, dashHeight);
     }
     x += barWidth + barGap;
-    barIndex++;
   }
 }
 

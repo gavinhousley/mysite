@@ -22,7 +22,7 @@
       href="./images/favicon/apple-touch-icon.png"
     />
 
-    <title>Gavin Housley — Blog</title>
+    <title>Gavin Housley — A Game of Love and Hate</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link
       href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600;700&family=Work+Sans:wght@400;500;600&display=swap"
@@ -34,15 +34,22 @@
   <body>
     <header class="subpage-header">
       <a href="index.html" class="logo">GH</a>
-      <a href="index.html" class="back-link">← Back to gavinhousley.com</a>
+      <a href="index.html#code" class="back-link">← Back to gavinhousley.com</a>
     </header>
 
-    <main class="subpage-main">
-      <h1>Blog</h1>
-      <div id="blog-container"></div>
+    <main class="subpage-main game-wrap">
+      <h1>A Game of Love and Hate</h1>
+      <p class="subpage-intro">
+        I learned more about the Canvas API in JavaScript by following
+        along with the Breakout MDN tutorial. Here I've put my own twist on
+        it to make it a bit more fun. It's interesting as a new developer
+        learning how these seemingly simple games are programmed, as it
+        gives new appreciation to the work, humanity, and maths! that goes
+        into them.
+      </p>
+      <canvas id="myCanvas" width="400" height="500"></canvas>
     </main>
 
-    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-    <script src="blog.js"></script>
+    <script src="love-hate.js"></script>
   </body>
 </html>
