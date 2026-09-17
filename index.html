@@ -34,7 +34,13 @@
   <body>
     <header class="site-header">
       <a href="#top" class="logo">GH</a>
-      <nav class="site-nav">
+      <a href="#links" class="btn btn-cta">Get in touch</a>
+      <button class="burger" aria-label="Toggle menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <nav class="site-nav" id="main-nav">
         <a href="#about">About</a>
         <a href="#code">Code</a>
         <a href="#art">Art</a>
@@ -43,19 +49,17 @@
         <a href="blog.html">Blog</a>
         <a href="#links">Links</a>
       </nav>
-      <a href="#links" class="btn btn-cta">Get in touch</a>
     </header>
 
     <section id="top" class="hero">
       <div>
-        <h1>GAVIN<br />HOUSLEY</h1>
+        <h1>GAVIN <br class="hero-break" />HOUSLEY</h1>
         <p class="hero-tagline">
           Developer &middot; Musician &middot; Artist &middot; Maker
         </p>
         <p class="hero-intro">
-          Retraining as a full-stack JavaScript developer after a decade
-          spent in bookselling, fashion and music &mdash; still doing all of
-          it.
+          Retraining as a full-stack JavaScript developer after a decade spent
+          in bookselling, fashion and music &mdash; still doing all of it.
         </p>
       </div>
       <div class="hero-media">
@@ -81,22 +85,23 @@
           literature, music and coffee.
         </p>
         <p>
-          Born in Sidcup, Kent, I studied Visual Arts at the University of
-          Plymouth before a detour into bookselling &mdash; eventually
-          rising to Head of Fiction at Foyles on Charing Cross Road.
-          Alongside the books came music: singing and playing guitar in the
-          indie trio William and the instrumental Naciente Quartet.
+          Born on the outskirts of London I studied Visual Arts at the
+          University of Plymouth before a detour into bookselling &mdash;
+          eventually rising to Head of Fiction at Foyles on Charing Cross Road.
+          Alongside my fascination with books came music: singing and playing
+          guitar in the indie trio William and playing guitar with The Naciente
+          Quartet.
         </p>
         <p>
-          Books and music weren't enough, so I started making my own
-          clothes &mdash; a hobby that grew into six years inside the
-          ethical fashion brand Palava, managing production, embroidery and
-          fabric development. Somewhere in there I also picked up linocut
-          printmaking and pulled pints of coffee at Monmouth.
+          Books and music weren't enough, so I started making my own clothes
+          &mdash; a hobby that became six years inside the ethical fashion brand
+          Palava, managing production, embroideries and fabric development.
+          Along the way I also picked up linocut printmaking and followed
+          another passion, working for Monmouth Coffee.
         </p>
         <p>
-          Now I'm retraining as a full-stack developer, merging that
-          artistic sensibility with a love of logic and problem-solving.
+          Now I've retrained as a full-stack developer, merging that artistic
+          sensibility with a love of logic and problem-solving.
         </p>
         <div class="tag-row">
           <span class="tag tag-blue">Developer</span>
@@ -115,11 +120,11 @@
         <h2 class="section-title">Code</h2>
         <div class="accent-bar accent-red"></div>
         <p class="section-intro">
-          I completed a JavaScript bootcamp with Northcoders, where I
-          learned the fundamentals of writing clean, functional code. Since
-          finishing I've kept building independently &mdash; vanilla JS,
-          CSS layout, data structures, and working with AI tools as part of
-          the process.
+          I completed a JavaScript bootcamp with Northcoders, where I learned
+          the fundamentals of writing clean, functional code. Since finishing
+          I've kept building independently &mdash; practicing my vanilla JS, CSS
+          layout, data structures, and working with AI tools as part of the
+          process.
         </p>
         <div class="card-grid">
           <div class="card">
@@ -157,18 +162,21 @@
               <h3>One Hundred Books</h3>
             </a>
             <p>
-              A React site for the Norwegian Book Club's 100 greatest books
-              list &mdash; browsable as a grid, timeline or world map.
+              A React site for the Norwegian Book Club's 100 greatest books list
+              &mdash; browsable as a grid, timeline or world map.
             </p>
           </div>
           <div class="card">
             <div class="card-image">
-              <img src="images/b-books-1.png" alt="Borough Books app screenshot" />
+              <img
+                src="images/b-books-1.png"
+                alt="Borough Books app screenshot"
+              />
             </div>
             <h3>Borough Books</h3>
             <p>
-              React Native app with a custom backend &mdash; commenting,
-              voting and posting, built end to end.
+              React Native app with a custom backend &mdash; commenting, voting
+              and posting, built end to end.
             </p>
           </div>
           <div class="card">
@@ -178,7 +186,10 @@
               rel="noopener noreferrer"
             >
               <div class="card-image">
-                <img src="images/northcoders-news.png" alt="NC News site screenshot" />
+                <img
+                  src="images/northcoders-news.png"
+                  alt="NC News site screenshot"
+                />
               </div>
               <h3>NC News</h3>
             </a>
@@ -189,12 +200,15 @@
           </div>
           <div class="card">
             <div class="card-image">
-              <img src="images/alina-meyer-website.png" alt="Screenshot of the alinameyer.com homepage" />
+              <img
+                src="images/alina-meyer-website.png"
+                alt="Screenshot of the alinameyer.com homepage"
+              />
             </div>
             <h3>alinameyer.com</h3>
             <p>
-              My first client project &mdash; a personal site designed and
-              built for Alina Meyer.
+              My first client project &mdash; a personal site designed and built
+              for Alina Meyer.
             </p>
           </div>
           <div class="card">
@@ -203,8 +217,8 @@
               <h3>A Game of Love and Hate</h3>
             </a>
             <p>
-              A Breakout-style canvas game built while learning the Canvas
-              API &mdash; LOVE vs HATE.
+              A Breakout-style canvas game built while learning the Canvas API
+              &mdash; LOVE vs HATE.
             </p>
           </div>
         </div>
@@ -216,8 +230,7 @@
       <div class="accent-bar accent-blue"></div>
       <p class="section-intro">
         I've been making linocut prints for a few years. There's something
-        honest about multiples &mdash; every flaw and strength in a design
-        gets amplified once it's printed.
+        wonderful about hanging a line of prints up.
       </p>
       <div class="art-grid">
         <div>
@@ -227,7 +240,9 @@
               alt="Les Onglous linocut print of a lighthouse"
             />
           </div>
-          <p class="media-caption">&ldquo;Les Onglous&rdquo; &mdash; Linocut, 55&times;35cm</p>
+          <p class="media-caption">
+            &ldquo;Les Onglous&rdquo; &mdash; Linocut, 55&times;35cm
+          </p>
         </div>
         <div>
           <div class="art-image">
@@ -236,16 +251,17 @@
               alt="Land of Dreams linocut print"
             />
           </div>
-          <p class="media-caption">&ldquo;Land of Dreams&rdquo; &mdash; Linocut, 30&times;30cm</p>
+          <p class="media-caption">
+            &ldquo;Land of Dreams&rdquo; &mdash; Linocut, 30&times;30cm
+          </p>
         </div>
         <div>
           <div class="art-image">
-            <img
-              src="images/horses.png"
-              alt="Horses linocut print"
-            />
+            <img src="images/horses.png" alt="Horses linocut print" />
           </div>
-          <p class="media-caption">&ldquo;Horses&rdquo; &mdash; Linocut, 30&times;20cm</p>
+          <p class="media-caption">
+            &ldquo;Horses&rdquo; &mdash; Linocut, 30&times;20cm
+          </p>
         </div>
         <div>
           <video
@@ -268,11 +284,11 @@
         <h2 class="section-title">Music</h2>
         <div class="accent-bar accent-red"></div>
         <p class="section-intro">
-          Getting thrown out of a party for showing up uninvited turned out
-          to be the best thing that happened to me &mdash; a friend taught
-          me Wild Thing on bass out of apology, and I never recovered. Since
-          then: bass, guitar, three very different bands, and a solo
-          project that's finally back.
+          Getting thrown out of a party for showing up uninvited turned out to
+          be the best thing that happened to me &mdash; a friend taught me Wild
+          Thing on bass out of apology, and I never recovered. Since then: bass,
+          guitar, three very different bands, and a solo project that's finally
+          back.
         </p>
         <div class="release-grid">
           <div class="release-card">
@@ -283,11 +299,28 @@
               />
             </div>
             <h3>Sicamore</h3>
-            <p class="release-meta">&ldquo;Halfway There&rdquo; &mdash; Encyclopaedia Records, 2026</p>
+            <p class="release-meta">
+              &ldquo;Halfway There&rdquo; &mdash; Encyclopaedia Records, 2026
+            </p>
             <div class="release-links">
-              <a href="https://sicamore.bandcamp.com/album/halfway-there" target="_blank" rel="noopener noreferrer">Bandcamp</a>
-              <a href="https://open.spotify.com/track/1O3CVM1od3yDdnY4daXmAE" target="_blank" rel="noopener noreferrer">Spotify</a>
-              <a href="https://music.apple.com/gb/album/halfway-there-ep/1874413498" target="_blank" rel="noopener noreferrer">iTunes</a>
+              <a
+                href="https://sicamore.bandcamp.com/album/halfway-there"
+                target="_blank"
+                rel="noopener noreferrer"
+                >Bandcamp</a
+              >
+              <a
+                href="https://open.spotify.com/track/1O3CVM1od3yDdnY4daXmAE"
+                target="_blank"
+                rel="noopener noreferrer"
+                >Spotify</a
+              >
+              <a
+                href="https://music.apple.com/gb/album/halfway-there-ep/1874413498"
+                target="_blank"
+                rel="noopener noreferrer"
+                >iTunes</a
+              >
             </div>
           </div>
           <div class="release-card">
@@ -298,10 +331,22 @@
               />
             </div>
             <h3>William</h3>
-            <p class="release-meta">Indie trio &mdash; Tough Love Records, 2008&ndash;09</p>
+            <p class="release-meta">
+              Indie trio &mdash; Tough Love Records, 2008&ndash;09
+            </p>
             <div class="release-links">
-              <a href="https://williamtheband.bandcamp.com/album/slightly-delighted" target="_blank" rel="noopener noreferrer">Bandcamp</a>
-              <a href="https://open.spotify.com/album/7g8WTF3U5CF46Zu22Hn69o" target="_blank" rel="noopener noreferrer">Spotify</a>
+              <a
+                href="https://williamtheband.bandcamp.com/album/slightly-delighted"
+                target="_blank"
+                rel="noopener noreferrer"
+                >Bandcamp</a
+              >
+              <a
+                href="https://open.spotify.com/album/7g8WTF3U5CF46Zu22Hn69o"
+                target="_blank"
+                rel="noopener noreferrer"
+                >Spotify</a
+              >
             </div>
           </div>
           <div class="release-card">
@@ -312,19 +357,34 @@
               />
             </div>
             <h3>The Naciente Quartet</h3>
-            <p class="release-meta">Instrumental post-rock &mdash; &ldquo;Engine Room Sessions&rdquo;, 2007</p>
+            <p class="release-meta">
+              Instrumental post-rock &mdash; &ldquo;Engine Room Sessions&rdquo;,
+              2007
+            </p>
             <div class="release-links">
-              <a href="https://naciente.bandcamp.com/album/engine-room-sessions" target="_blank" rel="noopener noreferrer">Bandcamp</a>
+              <a
+                href="https://naciente.bandcamp.com/album/engine-room-sessions"
+                target="_blank"
+                rel="noopener noreferrer"
+                >Bandcamp</a
+              >
             </div>
           </div>
         </div>
         <div class="section-more">
           <a href="music.html" class="btn btn-outline">More Music →</a>
         </div>
-        <video class="video-embed video-embed-spaced" controls preload="metadata" poster="images/blackpeaches-glastonbury-poster.jpg">
+        <video
+          class="video-embed video-embed-spaced"
+          controls
+          preload="metadata"
+          poster="images/blackpeaches-glastonbury-poster.jpg"
+        >
           <source src="video/blackpeaches-glastonbury.mp4" type="video/mp4" />
         </video>
-        <p class="media-caption media-caption-spaced">Playing bass with Black Peaches, Park Stage, Glastonbury 2018</p>
+        <p class="media-caption media-caption-spaced">
+          Playing bass with Black Peaches, Park Stage, Glastonbury 2018
+        </p>
       </div>
     </section>
 
@@ -332,18 +392,23 @@
       <h2 class="section-title">Clothing</h2>
       <div class="accent-bar accent-blue"></div>
       <p class="section-intro">
-        My grandmother was a seamstress. It started with a coat and my
-        mother's guidance, then pattern-cutting courses, and six years
-        inside the small ethical label Palava learning the craft and
-        business of fashion from the inside out. I made everything below.
+        My grandmother was a seamstress. It started with a coat and my mother's
+        guidance, then pattern-cutting courses, and six years inside the small
+        ethical label Palava learning the craft and business of fashion from the
+        inside out. I made everything below.
       </p>
       <div class="clothing-grid">
         <img src="images/coat.png" alt="Handmade checked wool coat" />
-        <img src="images/embroidered-shirt.png" alt="Handmade embroidered shirt" />
+        <img
+          src="images/embroidered-shirt.png"
+          alt="Handmade embroidered shirt"
+        />
         <img src="images/kimono-jacket-1.png" alt="Handmade kimono jacket" />
         <img src="images/mexican-shirt.png" alt="Handmade shirt" />
       </div>
-      <div class="video-slot clothing-video-slot" hidden>[ making-process video — to be added ]</div>
+      <div class="video-slot clothing-video-slot" hidden>
+        [ making-process video — to be added ]
+      </div>
     </section>
 
     <div class="divider divider-blue-red"><span></span><span></span></div>
@@ -356,24 +421,66 @@
             <h3>Contact</h3>
             <div class="links-col-list">
               <a href="mailto:gavinhousley@gmail.com">gavinhousley@gmail.com</a>
-              <a href="https://github.com/gavinhousley" target="_blank" rel="noopener noreferrer">GitHub</a>
-              <a href="https://linkedin.com/in/gavinhousley" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+              <a
+                href="https://github.com/gavinhousley"
+                target="_blank"
+                rel="noopener noreferrer"
+                >GitHub</a
+              >
+              <a
+                href="https://linkedin.com/in/gavinhousley"
+                target="_blank"
+                rel="noopener noreferrer"
+                >LinkedIn</a
+              >
             </div>
           </div>
           <div class="links-col">
             <h3>Sicamore</h3>
             <div class="links-col-list">
-              <a href="https://tiktok.com/@sicamore_" target="_blank" rel="noopener noreferrer">TikTok</a>
-              <a href="https://instagram.com/sicamore_" target="_blank" rel="noopener noreferrer">Instagram</a>
-              <a href="https://sicamore.bandcamp.com" target="_blank" rel="noopener noreferrer">Bandcamp</a>
-              <a href="https://open.spotify.com/artist/2SWhHBks3mUV1cOyWuS5Eo" target="_blank" rel="noopener noreferrer">Spotify</a>
-              <a href="https://music.apple.com/gb/artist/sicamore/1874139879" target="_blank" rel="noopener noreferrer">iTunes</a>
-              <a href="https://gavin-housley.teemill.com/product/sicamore-halfway-there-tshirt/" target="_blank" rel="noopener noreferrer">T-shirts</a>
+              <a
+                href="https://tiktok.com/@sicamore_"
+                target="_blank"
+                rel="noopener noreferrer"
+                >TikTok</a
+              >
+              <a
+                href="https://instagram.com/sicamore_"
+                target="_blank"
+                rel="noopener noreferrer"
+                >Instagram</a
+              >
+              <a
+                href="https://sicamore.bandcamp.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                >Bandcamp</a
+              >
+              <a
+                href="https://open.spotify.com/artist/2SWhHBks3mUV1cOyWuS5Eo"
+                target="_blank"
+                rel="noopener noreferrer"
+                >Spotify</a
+              >
+              <a
+                href="https://music.apple.com/gb/artist/sicamore/1874139879"
+                target="_blank"
+                rel="noopener noreferrer"
+                >iTunes</a
+              >
+              <a
+                href="https://gavin-housley.teemill.com/product/sicamore-halfway-there-tshirt/"
+                target="_blank"
+                rel="noopener noreferrer"
+                >T-shirts</a
+              >
             </div>
           </div>
         </div>
         <p class="copyright">&copy; 2026 Gavin Housley</p>
       </div>
     </section>
+
+    <script src="nav.js"></script>
   </body>
 </html>
