@@ -1,78 +1,119 @@
 # gavinhousley.com
 
-Static HTML/CSS/JS personal site (no build step, no framework). Deployed as plain files.
+Static HTML/CSS/JS personal site (no build step, no framework). Hosted on **Vercel**
+(`server: Vercel` / `x-vercel-id` headers confirm this — it is not GitHub Pages, despite the
+repo living on GitHub at `gavinhousley/mysite`). Deploys automatically off pushes to `main`;
+the apex domain redirects to `https://www.gavinhousley.com`. Deploys are typically live within
+a few minutes — a brand-new file path 404ing right after a push is normal propagation lag, not
+a bug, unless it's still 404ing several minutes later.
 
-## Current state: redesign in progress, built as adjunct files
+## Current state: the single-page redesign is live
 
-A full redesign (single scrolling page, replacing the old multipage site) is underway. It is
-being built **alongside** the live site as `-new` files, so nothing currently live has been
-touched or is at risk. The live site's own files (`home.html`, `about.html`, `code.html`,
-`art.html`, `clothing.html`, `links.html`, `music.html`, `main.css`, `main.js`, `landing.css`,
-`dark-page.css`, `audio.js`, `player.js`, `visualiser.js`, `love-hate.js`) are all unmodified.
+The site was redesigned from a multipage layout to one long scrolling page and is now in
+production. Design spec and rationale live in `README.md` (handoff doc) and `design.html`
+(the original static HTML/CSS prototype with inline styles — a reference for look/copy, not
+code that's actually reused).
 
-Design spec and rationale live in `README.md` (handoff doc) and `design.html` (static HTML/CSS
-prototype with inline styles — a reference for look/copy, not code to reuse directly).
+### Live production files
 
-### New files (the redesign, not yet live)
-
-- `redesign.css` — the new design system (tokens, nav, hero, cards, sections, dark footer,
-  subpage/player components). Self-contained; not shared with any old page.
-- `index-new.html` — the new single-scroll homepage: sticky nav, hero, About, Code, Art, Music
-  (condensed), Clothing, Links/footer. All content sourced from `design.html` + `README.md`.
-- `music-new.html` — full Music page (release write-ups, audio player, **visualizer canvas
-  restored** with the new blue/red/cream palette instead of the old grey, sample-track
-  playback, Buttondown newsletter signup). Linked from `index-new.html`'s Music section via a
+- `index.html` — the single-scroll homepage: sticky nav, hero, About, Code, Art, Music
+  (condensed), Clothing, Links/footer.
+- `music.html` — full Music page (release write-ups, audio player + visualizer, sample-track
+  playback, Buttondown newsletter signup). Linked from `index.html`'s Music section via a
   "More Music →" button.
-- `love-hate-new.html` — new page hosting the existing Love & Hate canvas game (unchanged
-  `love-hate.js`), linked from `index-new.html`'s Code grid as its 6th project card.
-- `visualiser-new.js`, `player-new.js` — copies of the old `visualiser.js`/`player.js` with
-  selectors/colors updated for the new markup and palette. The old versions are untouched.
+- `love-hate.html` — hosts the Love & Hate canvas game (`love-hate.js`). **No longer linked
+  from anywhere on the site** (the Code grid card was removed) — it still works if visited
+  directly, it's just orphaned/undiscoverable now.
+- `blog.html` — redesigned blog, reuses `blog.js` / `blog/manifest.json` / the markdown posts
+  unchanged.
+- `links.html` — a standalone **linktree-style bio page**, separate from `index.html`'s own
+  `#links` footer section. This exists because the user's Instagram/TikTok bios link directly
+  to `gavinhousley.com/links.html` — that URL must keep resolving. Red→blue pill buttons
+  (`.btn-cta`/`.btn-block`) for TikTok/Instagram/Bandcamp/Spotify/iTunes/T-shirts, plus a small
+  contact row and a link back to the main site.
+- `redesign.css` — the one shared stylesheet for all of the above (tokens, nav, hero, cards,
+  sections, dark footer, subpage/player/linktree components).
+- `nav.js` — mobile burger-menu toggle (open/close, closes on link click). Only `index.html`
+  uses it; subpages have a simpler logo+back-link header with no burger.
+- `visualiser.js`, `player.js`, `audio.js` — music player behavior for `music.html` (see Music
+  section below).
 
-### Key decisions made during this redesign (don't re-litigate without asking)
+### Archived (not deleted) old-site files
 
-- **Hero**: split layout (headline/tagline/intro left, portrait + offset blue/red blocks
-  right) — not the photo-bg alternative that was also in `design.html`.
-- **Code section**: grid layout (not the alternating stacked-rows alternative).
-- **Code section has a 6th card** beyond `design.html`'s 5: "A Game of Love and Hate" (the
-  existing canvas game from the old `code.html`), placeholder tile linking to
-  `love-hate-new.html`.
-- **Music**: the single-page section stays condensed (matches `design.html` exactly — cards +
-  streaming links, no player), plus a "More Music →" button to `music-new.html`. The fuller
-  experience — audio player, **visualizer** (kept, recolored), sample-track buttons, newsletter
-  form — lives only on `music-new.html`, not duplicated on the homepage.
-- **Video placeholders** (Art process video, Music live-performance video, Clothing
-  making-process video): intentionally left as placeholder boxes for now — no video files or
-  links provided yet.
+`old-site/` holds everything the redesign superseded: `home.html`, `about.html`, `art.html`,
+`clothing.html`, `code.html`, `landing.css`, and the pre-redesign `music.html`, `blog.html`,
+`visualiser.js`, `player.js`. Nothing was deleted outright — if any of this is ever needed
+again it's sitting right there, fully intact.
 
-### Open placeholder slots (no asset yet, ask the user before filling)
+`main.css`, `main.js`, and `dark-page.css` are still at the repo root but are now **unused** by
+any live page (the pages that used to reference them, e.g. the old `blog.html`, have been
+redesigned onto `redesign.css`). Left in place untouched rather than deleted — that was an
+explicit instruction, not an oversight. `iching/` is a separate mini-app, untouched and still
+linked from the Code section.
 
-- About section portrait photo
-- alinameyer.com project screenshot (Code section)
-- One additional Art print
-- All three video slots above
+### Design system notes
 
-### When ready to go live
+- **Headings** (logo, nav links, section titles like "About"/"Code"/etc., the dark Links
+  footer's "Let's talk", and subpage `<h1>`s) use `--font-heading: Futura, "Jost", sans-serif`
+  — Futura where the visitor's OS has it (macOS ships it), Jost as the web-font fallback
+  everywhere else. Everything else (buttons, tags, card titles, hero tagline) uses
+  `--font-display: "Jost", sans-serif` only. Don't conflate the two variables.
+- Section title font-size was deliberately reduced ~20% from the original design spec:
+  `clamp(1.44rem, 2.4vw, 2.08rem)`, not the larger size `design.html`/`README.md` show.
+- `[hidden] { display: none !important; }` is a deliberate global rule — without it, elements
+  like `.video-slot` (which sets its own `display: flex`) silently ignore the `hidden`
+  attribute because of author-vs-UA-stylesheet specificity rules. Don't remove this rule when
+  hiding things with `hidden` in future.
+- `.art-image` and `.clothing-grid img` carry an explicit `background: var(--card-bg)` — most
+  of the Art/Clothing photos are transparent PNG cutouts, and this guards against a dark halo
+  if a visitor's browser force-dark-mode overrides page backgrounds (the site itself has no
+  dark mode; this is purely a defensive fallback).
+- Mobile-only behavior (all inside the existing `@media (max-width: 768px)` block in
+  `redesign.css`) includes: burger nav (nav hidden inline, becomes a fixed dropdown panel via
+  `.site-nav.open`), hero media (image + offset color blocks) scaled to `width: 85%`, hero `h1`
+  forced onto one line (`.hero-break` `<br>` hidden, `white-space: nowrap`, fluid
+  `clamp(1.9rem, 8.5vw, 2.34rem)` font-size so it never overflows down to a 320px viewport),
+  and the whole `.hero-text` block (heading/tagline/intro) center-aligned. None of this affects
+  desktop.
+- `.bordered-image` (6px black border + matching radius) and `.shrink-image` (82% width,
+  centered) are one-off utility classes currently applied only to the I Ching and Borough Books
+  Code-section screenshots respectively — not general-purpose card treatments.
+- `#art .media-caption` is center-aligned; the base `.media-caption` class (also used for the
+  Music section's video caption) is left-aligned by default. Don't accidentally make that
+  global.
 
-The old files listed above are still what's actually served. Promoting the redesign means (in
-whichever order makes sense once approved): renaming/moving the `-new` files over the old
-entry points, deleting the now-superseded old pages
-(`home.html`/`about.html`/`art.html`/`clothing.html`/`code.html`), and updating `blog.html`'s
-nav links (currently point to the old multipage structure) to point at the new page anchors.
-`blog.html` itself, `iching/`, and `dark-page.css` are out of scope for this redesign and
-should be left alone.
+### Content specifics worth knowing
 
-**`links.html` has already been rebuilt, not deleted.** The user's Instagram and TikTok bios
-link out to `gavinhousley.com/links.html` directly. It's now a standalone "linktree-style" bio
-page in the new design system (`redesign.css`, red→blue `.btn-cta`/`.btn-block` pill buttons,
-`.linktree-*` classes) — same TikTok/Instagram/Bandcamp/Spotify/iTunes/T-shirts/contact links
-as the old page, just restyled. It is intentionally separate from `index-new.html`'s own
-`#links` footer section, which the on-site nav still scrolls to. Do not delete or fold this
-file into the single-page site at launch — it needs to keep existing at exactly this path.
+- **Code section** (5 cards, in order): I Ching, One Hundred Books, Borough Books, NC News,
+  alinameyer.com (links out to `https://alinameyer.com`). The "A Game of Love and Hate" 6th
+  card has been removed from this grid — see `love-hate.html` note above.
+- **Art section** print order: Les Onglous, Shadows, The Chosen One, Land of Dreams, The
+  Chapel, The Sage, then a process video (`video/lino-process.mp4`, converted from a
+  HEVC-encoded `.mov` via `ffmpeg` — installed via Homebrew this session and now available on
+  this machine — with poster `images/lino-process-poster.jpg`). An Etsy link
+  (`https://gavinhousleyprints.etsy.com`) sits under the intro paragraph. `images/horses.png`
+  was used briefly and later swapped out; the file is still in `images/` but unused.
+- **Music section** (condensed, on `index.html`): uses candid/live photos, not album covers —
+  `sicamore.png`, `william.png`, `naciente.png`. This is intentionally different from the full
+  `music.html` page, which still shows the actual per-release album artwork
+  (`Sicamore_EP_Halfway_There_Art.png`, `william-slightly-delighted-album.png`, etc.) — don't
+  "fix" this inconsistency without asking, it was a deliberate choice. William's card links to
+  an artist-level Spotify/iTunes page (not the old album-specific links). A live-performance
+  video (`video/blackpeaches-glastonbury.mp4`, poster
+  `images/blackpeaches-glastonbury-poster.jpg`, captioned "Playing bass with Black Peaches,
+  Park Stage, Glastonbury 2018") sits below the release grid.
+- **Clothing section**: currently shows three knitted cardigan photos —  `lighthouse.png`,
+  `goat.png`, `shark.png` — replacing the earlier coat/embroidered-shirt/kimono/mexican-shirt
+  set. Those four old files are still in `images/` and may be brought back later (the user
+  said so explicitly) — don't delete them. A Teemill link
+  (`https://gavin-housley.teemill.com`) sits under the intro paragraph. The making-process
+  video slot is present but `hidden` (no video yet) — remove the `hidden` attribute once one's
+  supplied.
 
-### Other adjunct files not yet linked into any migration decision
+### Verifying changes
 
-- `blog-new.html` — new-design version of the blog, reuses `blog.js`/`blog/manifest.json`/
-  markdown posts unchanged, linked from `index-new.html`'s nav. `blog.html` (old) still exists
-  and is unmodified/unlinked-from-new-nav.
-- Clothing section's making-process video slot is currently `hidden` in `index-new.html` (no
-  video ready yet) — remove the `hidden` attribute once a video is added.
+This session set up headless-Chromium screenshot verification via Playwright (installed to the
+session's scratchpad directory via `npm install playwright`, not part of this repo) since no
+project-specific run skill exists yet. Useful for catching layout/console-error regressions
+before reporting work done — worth re-establishing the same way in future sessions rather than
+assuming it's still installed.
