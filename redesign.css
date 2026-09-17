@@ -500,6 +500,10 @@ img {
   margin: 0;
 }
 
+#art .media-caption {
+  text-align: center;
+}
+
 .media-caption-spaced {
   margin-top: 14px;
 }
@@ -941,6 +945,14 @@ img {
 @media (max-width: 768px) {
   .hero {
     grid-template-columns: 1fr;
+  }
+
+  .hero-text {
+    text-align: center;
+  }
+
+  .hero-intro {
+    margin: 0 auto;
   }
 
   .hero-media {
