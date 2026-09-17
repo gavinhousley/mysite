@@ -425,6 +425,17 @@ img {
   background: var(--card-bg);
 }
 
+.bordered-image {
+  border: 6px solid #000;
+  border-radius: 14px;
+}
+
+.shrink-image {
+  width: 82%;
+  margin: 0 auto;
+  display: block;
+}
+
 .card h3 {
   font-family: var(--font-display);
   font-weight: 600;
