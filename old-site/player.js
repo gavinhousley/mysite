@@ -1,8 +1,8 @@
-const playButtons = document.querySelectorAll(".play-sample");
+const playButtons = document.querySelectorAll(".play-album");
 
 playButtons.forEach((button) => {
   button.addEventListener("click", () => {
-    const article = button.closest(".release-card-full");
+    const article = button.closest(".album");
     const track = article.dataset.track;
     const title = article.dataset.title;
 

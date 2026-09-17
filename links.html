@@ -21,102 +21,81 @@
       sizes="180x180"
       href="./images/favicon/apple-touch-icon.png"
     />
-    <title>Gavin Housley</title>
-    <link rel="stylesheet" href="main.css" />
+
+    <title>Gavin Housley — Links</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link
+      href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600;700&family=Work+Sans:wght@400;500;600&display=swap"
       rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
     />
+    <link rel="stylesheet" href="redesign.css" />
   </head>
 
   <body>
-    <header>
-      <a href="home.html" class="logo-link">
-        <h1 class="initials">GH</h1>
-      </a>
-      <button class="burger" aria-label="Toggle menu" aria-expanded="false">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
+    <main class="linktree-page">
+      <a href="index.html#top" class="logo">GH</a>
+      <p class="linktree-tagline">Developer &middot; Musician &middot; Artist &middot; Maker</p>
 
-      <nav id="main-nav">
-        <ul>
-          <li><a href="home.html">Home</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="code.html" id="code-link">Code</a></li>
-          <li><a href="art.html">Art</a></li>
-          <li><a href="music.html">Music</a></li>
-          <li><a href="blog.html">Blog</a></li>
-          <li><a href="links.html">Links</a></li>
-        </ul>
-      </nav>
-    </header>
-
-    <main>
-      <section id="dev-buttons">
-        <p>No TikTok ? click ... & "open in external browser"</p>
+      <div class="linktree-buttons">
         <a
+          class="btn btn-cta btn-block"
           href="https://tiktok.com/@sicamore_"
           aria-label="Visit my TikTok"
           target="_blank"
           rel="noopener noreferrer"
-          ><button>TikTok</button></a
+          >TikTok</a
         >
         <a
+          class="btn btn-cta btn-block"
           href="https://instagram.com/sicamore_"
           aria-label="Visit my Instagram"
           target="_blank"
           rel="noopener noreferrer"
-          ><button>Instagram</button></a
+          >Instagram</a
         >
         <a
+          class="btn btn-cta btn-block"
           href="https://sicamore.bandcamp.com"
           aria-label="Visit my Bandcamp"
           target="_blank"
           rel="noopener noreferrer"
-          ><button>Bandcamp</button></a
+          >Bandcamp</a
         >
         <a
-          href="https://open.spotify.com/artist/2SWhHBks3mUV1cOyWuS5Eo?si=nKEw-NhgSCuFD72Ih1Pnlg"
+          class="btn btn-cta btn-block"
+          href="https://open.spotify.com/artist/2SWhHBks3mUV1cOyWuS5Eo"
           aria-label="Visit my Spotify"
           target="_blank"
           rel="noopener noreferrer"
-          ><button>Spotify</button></a
+          >Spotify</a
         >
         <a
+          class="btn btn-cta btn-block"
           href="https://music.apple.com/gb/artist/sicamore/1874139879"
           aria-label="Visit my iTunes"
           target="_blank"
           rel="noopener noreferrer"
-          ><button>iTunes</button></a
+          >iTunes</a
         >
         <a
+          class="btn btn-cta btn-block"
           href="https://gavin-housley.teemill.com/product/sicamore-halfway-there-tshirt/"
           aria-label="Visit my Tshirt page"
           target="_blank"
           rel="noopener noreferrer"
-          ><button>Tshirts</button></a
+          >T-shirts</a
         >
-      </section>
+      </div>
+
+      <p class="linktree-note">No TikTok app? Tap &hellip; and choose &ldquo;Open in external browser&rdquo;</p>
+
+      <div class="linktree-contact">
+        <a href="mailto:gavinhousley@gmail.com">gavinhousley@gmail.com</a>
+        <a href="https://github.com/gavinhousley" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="https://linkedin.com/in/gavinhousley" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      </div>
+
+      <a href="index.html" class="back-link linktree-site-link">gavinhousley.com →</a>
     </main>
-    <footer>
-      <a
-        href="https://github.com/gavinhousley"
-        aria-label="Visit my GitHub profile"
-        target="_blank"
-        rel="noopener noreferrer"
-        ><i class="fab fa-github"></i>
-      </a>
-      <a href="mailto:gavinhousley@gmail.com">gavinhousley@gmail.com</a>
-      <a
-        href="https://linkedin.com/in/gavinhousley"
-        aria-label="Visit my LinkedIn profile"
-        target="_blank"
-        rel="noopener noreferrer"
-        ><i class="fab fa-linkedin"></i
-      ></a>
-    </footer>
-    <script src="main.js"></script>
   </body>
 </html>

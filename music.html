@@ -21,83 +21,62 @@
       sizes="180x180"
       href="./images/favicon/apple-touch-icon.png"
     />
-    <title>Gavin Housley</title>
-    <link rel="stylesheet" href="main.css" />
+
+    <title>Gavin Housley — Music</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link
+      href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600;700&family=Work+Sans:wght@400;500;600&display=swap"
       rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
     />
+    <link rel="stylesheet" href="redesign.css" />
   </head>
 
   <body>
-    <header>
-      <a href="home.html" class="logo-link">
-        <h1 class="initials">GH</h1>
-      </a>
-      <button class="burger" aria-label="Toggle menu" aria-expanded="false">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-
-      <nav id="main-nav">
-        <ul>
-          <li><a href="home.html">Home</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="code.html" id="code-link">Code</a></li>
-          <li><a href="art.html">Art</a></li>
-          <li><a href="music.html">Music</a></li>
-          <li><a href="blog.html">Blog</a></li>
-          <li><a href="links.html">Links</a></li>
-        </ul>
-      </nav>
+    <header class="subpage-header">
+      <a href="index.html" class="logo">GH</a>
+      <a href="index.html#music" class="back-link">← Back to gavinhousley.com</a>
     </header>
 
-    <main>
-      <div class="visualiser-section">
-        <canvas id="visualiser" width="400" height="140"></canvas>
-        <audio id="audio-player" controls></audio>
-        <p id="now-playing"></p>
-      </div>
+    <div class="player-bar">
+      <canvas id="visualiser" width="400" height="140"></canvas>
+      <audio id="audio-player" controls></audio>
+      <p id="now-playing"></p>
+    </div>
 
-      <section class="albums">
-        <article
-          class="album"
-          data-track="/audio/04 Halfway There.m4a"
-          data-title="Halfway There by Sicamore"
-        >
-          <h2>SICAMORE</h2>
-          <p>
-            "Halfway There" - Encyclopaedia Records 2026 | Gavin Housley -
-            Acoustic Guitar and Vocals
-          </p>
+    <main class="subpage-main">
+      <h1>Music</h1>
+      <p class="subpage-intro">
+        Getting thrown out of a sweet sixteen for showing up uninvited
+        turned out to be the best thing that ever happened to me. My friend
+        Ben, by way of apology, sat me down and taught me Wild Thing on
+        bass. And so it began.
+      </p>
+
+      <article
+        class="release-card-full"
+        data-track="/audio/04 Halfway There.m4a"
+        data-title="Halfway There by Sicamore"
+      >
+        <div class="release-image">
           <img
-            src="./images/Sicamore_EP_Halfway_There_Art.png"
-            width="450px"
-            alt="Album cover for Sicamore's Halfway There EP, a fish with a ring in its mouth on the left, an outline of a dead person in the middle, an elder holding an antennae on the right and a dark cloud above with lightning striking the man, and sea behind"
+            src="images/Sicamore_EP_Halfway_There_Art.png"
+            alt="Sicamore Halfway There EP cover"
           />
-          <ul class="album-links">
-            <li>
-              <a href="https://sicamore.bandcamp.com/album/halfway-there"
-                >bandcamp</a
-              >
-            </li>
-            <li>
-              <a
-                href="https://music.apple.com/gb/album/halfway-there-ep/1874413498"
-                >iTunes</a
-              >
-            </li>
-            <li>
-              <a
-                href="https://open.spotify.com/track/1O3CVM1od3yDdnY4daXmAE?si=8b3239c4be4645cc"
-                >Spotify</a
-              >
-            </li>
-          </ul>
-          <button class="play-album">Play sample track</button>
-        </article>
+        </div>
+        <h3>Sicamore</h3>
+        <p class="release-meta">
+          &ldquo;Halfway There&rdquo; &mdash; Encyclopaedia Records, 2026 |
+          Gavin Housley &mdash; Acoustic Guitar and Vocals
+        </p>
+        <div class="release-links">
+          <a href="https://sicamore.bandcamp.com/album/halfway-there" target="_blank" rel="noopener noreferrer">Bandcamp</a>
+          <a href="https://music.apple.com/gb/album/halfway-there-ep/1874413498" target="_blank" rel="noopener noreferrer">iTunes</a>
+          <a href="https://open.spotify.com/track/1O3CVM1od3yDdnY4daXmAE" target="_blank" rel="noopener noreferrer">Spotify</a>
+        </div>
+        <button class="play-sample">Play sample track</button>
+      </article>
 
+      <div class="newsletter-form">
         <form
           action="https://buttondown.com/api/emails/embed-subscribe/housley"
           method="post"
@@ -106,192 +85,131 @@
           <label for="bd-email">Sicamore News</label>
           <input type="email" name="email" id="bd-email" />
           <input type="submit" value="Subscribe" />
-          <p>
-            <a href="https://buttondown.com/refer/housley" target="_blank"> </a>
-          </p>
         </form>
+      </div>
 
-        <article
-          class="album"
-          data-track="/audio/Lustreless.m4a"
-          data-title="Lustreless by William"
-        >
-          <h2>WILLIAM</h2>
-          <p>
-            "Split" - (Split Single with Calories) - Tough Love Records - 2009 |
-            Gavin Housley - Lyrics, Guitar and Vocals
-          </p>
+      <article
+        class="release-card-full"
+        data-track="/audio/Lustreless.m4a"
+        data-title="Lustreless by William"
+      >
+        <div class="release-image">
           <img
-            src="./images/william-calories-split-single.png"
-            width="450px"
-            alt="william split single cover with Calories. Beach with two daggers scrawled across"
+            src="images/william-calories-split-single.png"
+            alt="William split single cover with Calories"
           />
-          <ul class="album-links">
-            <li>
-              <a href="hhttps://music.apple.com/gb/album/split/355975290"
-                >iTunes</a
-              >
-            </li>
-            <li>
-              <a
-                href="https://open.spotify.com/album/2gpriQjpdKZ9JPF1sasfqJ?si=p1QC6qwiSQyF_DRH5WVFWw"
-                >Spotify</a
-              >
-            </li>
-          </ul>
-          <button class="play-album">Play sample track</button>
-        </article>
+        </div>
+        <h3>William</h3>
+        <p class="release-meta">
+          &ldquo;Split&rdquo; (Split Single with Calories) &mdash; Tough
+          Love Records, 2009 | Gavin Housley &mdash; Lyrics, Guitar and
+          Vocals
+        </p>
+        <div class="release-links">
+          <a href="https://music.apple.com/gb/album/split/355975290" target="_blank" rel="noopener noreferrer">iTunes</a>
+          <a href="https://open.spotify.com/album/2gpriQjpdKZ9JPF1sasfqJ" target="_blank" rel="noopener noreferrer">Spotify</a>
+        </div>
+        <button class="play-sample">Play sample track</button>
+      </article>
 
-        <article
-          class="album"
-          data-track="/audio/01 Youngun.m4a"
-          data-title="Youngun by William"
-        >
-          <h2>WILLIAM</h2>
-          <p>
-            "Slightly Delighted" - Tough Love Records - 2009 | Gavin Housley -
-            Lyrics, Guitar and Vocals
-          </p>
-          <p>Gavin Housley - Lyrics, Guitar and Vocals</p>
+      <article
+        class="release-card-full"
+        data-track="/audio/01 Youngun.m4a"
+        data-title="Youngun by William"
+      >
+        <div class="release-image">
           <img
-            src="./images/william-slightly-delighted-album.png"
-            width="450px"
-            alt="William Album Cover - Slightly Delighted"
+            src="images/william-slightly-delighted-album.png"
+            alt="William Slightly Delighted album cover"
           />
-          <ul class="album-links">
-            <li>
-              <a
-                href="https://williamtheband.bandcamp.com/album/slightly-delighted"
-                >bandcamp</a
-              >
-            </li>
-            <li>
-              <a
-                href="https://music.apple.com/gb/album/slightly-delighted-ep/308356341"
-                >iTunes</a
-              >
-            </li>
-            <li>
-              <a
-                href="https://open.spotify.com/album/7g8WTF3U5CF46Zu22Hn69o?si=9H9OEBYHSS6srtwZO5-pPQ"
-                >Spotify</a
-              >
-            </li>
-          </ul>
-          <button class="play-album">Play sample track</button>
-        </article>
+        </div>
+        <h3>William</h3>
+        <p class="release-meta">
+          &ldquo;Slightly Delighted&rdquo; &mdash; Tough Love Records, 2009
+          | Gavin Housley &mdash; Lyrics, Guitar and Vocals
+        </p>
+        <div class="release-links">
+          <a href="https://williamtheband.bandcamp.com/album/slightly-delighted" target="_blank" rel="noopener noreferrer">Bandcamp</a>
+          <a href="https://music.apple.com/gb/album/slightly-delighted-ep/308356341" target="_blank" rel="noopener noreferrer">iTunes</a>
+          <a href="https://open.spotify.com/album/7g8WTF3U5CF46Zu22Hn69o" target="_blank" rel="noopener noreferrer">Spotify</a>
+        </div>
+        <button class="play-sample">Play sample track</button>
+      </article>
 
-        <article
-          class="album"
-          data-track="/audio/Aperture.m4a"
-          data-title="Aperture by William"
-        >
-          <h2>WILLIAM</h2>
-          <p>
-            "Self in Fiction" - Tough Love Records - 2008 | Gavin Housley -
-            Lyrics, Guitar and Vocals
-          </p>
+      <article
+        class="release-card-full"
+        data-track="/audio/Aperture.m4a"
+        data-title="Aperture by William"
+      >
+        <div class="release-image">
           <img
-            src="./images/william-self-in-fiction.png"
-            width="450px"
-            alt="William Album Cover - Self in Fiction"
+            src="images/william-self-in-fiction.png"
+            alt="William Self in Fiction album cover"
           />
-          <ul class="album-links">
-            <li>
-              <a
-                href="https://williamtheband.bandcamp.com/album/self-in-fiction"
-                >bandcamp</a
-              >
-            </li>
-            <li>
-              <a
-                href="https://music.apple.com/gb/album/self-in-fiction/279451536"
-                >iTunes</a
-              >
-            </li>
-            <li>
-              <a
-                href="https://open.spotify.com/album/6hPdTgmqjP7EbVBv3ulWTA?si=q5_cn1QGQDKDzhnS-TLQyw"
-                >Spotify</a
-              >
-            </li>
-          </ul>
-          <button class="play-album">Play sample track</button>
-        </article>
+        </div>
+        <h3>William</h3>
+        <p class="release-meta">
+          &ldquo;Self in Fiction&rdquo; &mdash; Tough Love Records, 2008 |
+          Gavin Housley &mdash; Lyrics, Guitar and Vocals
+        </p>
+        <div class="release-links">
+          <a href="https://williamtheband.bandcamp.com/album/self-in-fiction" target="_blank" rel="noopener noreferrer">Bandcamp</a>
+          <a href="https://music.apple.com/gb/album/self-in-fiction/279451536" target="_blank" rel="noopener noreferrer">iTunes</a>
+          <a href="https://open.spotify.com/album/6hPdTgmqjP7EbVBv3ulWTA" target="_blank" rel="noopener noreferrer">Spotify</a>
+        </div>
+        <button class="play-sample">Play sample track</button>
+      </article>
 
-        <article
-          class="album"
-          data-track="/audio/deptford2.mp3"
-          data-title="Deptford by The Naciente Quartet"
-        >
-          <h2>THE NACIENTE QUARTET</h2>
-          <p>"Engine Room Sessions" 2007 | Gavin Housley - Guitar, Drums</p>
+      <article
+        class="release-card-full"
+        data-track="/audio/deptford2.mp3"
+        data-title="Deptford by The Naciente Quartet"
+      >
+        <div class="release-image">
           <img
-            src="./images/naciente-quartet-engine-room-sessions.png"
-            width="450px"
-            alt="The Naciente Quartet Cover - Engine Room Sessions"
+            src="images/naciente-quartet-engine-room-sessions.png"
+            alt="The Naciente Quartet cover, Engine Room Sessions"
           />
-          <ul class="album-links">
-            <li>
-              <a href="https://naciente.bandcamp.com/album/engine-room-sessions"
-                >bandcamp</a
-              >
-            </li>
-          </ul>
-          <button class="play-album">Play sample track</button>
-        </article>
-        <p>A Life in Music, Started at the Wrong Party</p>
-        <p>
-          Getting thrown out of a sweet sixteen for showing up uninvited turned
-          out to be the best thing that ever happened to me. My friend Ben, by
-          way of apology, sat me down and taught me Wild Thing on bass. And so
-          it began.
+        </div>
+        <h3>The Naciente Quartet</h3>
+        <p class="release-meta">
+          &ldquo;Engine Room Sessions&rdquo;, 2007 | Gavin Housley &mdash;
+          Guitar, Drums
         </p>
-        <p>
-          My parents, perhaps sensing something had shifted, bought me a MIJ
-          Squier Stratocaster. My father had already done the essential work —
-          putting Jimi Hendrix, Chuck Berry and Sam Cooke in my ears. I've never
-          recovered.
-        </p>
-        <p>
-          School brought Violet Ray, where I played bass and sang "I Wanna Be
-          Adored" — a song choice that said everything about a certain kind of
-          adolescence. Britpop arrived and I migrated to guitar in The Fuse.
-          University opened into something more considered: The Naciente
-          Quartet, instrumental, cerebral, spiritual.
-        </p>
-        <p>
-          Falling in with skater friends, the solo project Sicamore loosened and
-          expanded into William — two bands running at once. In the gaps: a
-          single Serge Gainsbourg cover show; a long rehearsal stretch as The
-          Lightermen that never quite ignited; covering bass for Black Peaches
-          with Robert Smoughton on a tour that took in Green Man and
-          Glastonbury.
-        </p>
-        <p>
-          Now things have come full circle. Sicamore is back. And The Naciente
-          Quartet, I hope, shall return..
-        </p>
-      </section>
+        <div class="release-links">
+          <a href="https://naciente.bandcamp.com/album/engine-room-sessions" target="_blank" rel="noopener noreferrer">Bandcamp</a>
+        </div>
+        <button class="play-sample">Play sample track</button>
+      </article>
+
+      <p class="about-lead">A Life in Music, Started at the Wrong Party</p>
+      <p>
+        My parents, perhaps sensing something had shifted, bought me a MIJ
+        Squier Stratocaster. My father had already done the essential work
+        &mdash; putting Jimi Hendrix, Chuck Berry and Sam Cooke in my ears.
+        I've never recovered.
+      </p>
+      <p>
+        School brought Violet Ray, where I played bass and sang "I Wanna Be
+        Adored" &mdash; a song choice that said everything about a certain
+        kind of adolescence. Britpop arrived and I migrated to guitar in The
+        Fuse. University opened into something more considered: The
+        Naciente Quartet, instrumental, cerebral, spiritual.
+      </p>
+      <p>
+        Falling in with skater friends, the solo project Sicamore loosened
+        and expanded into William &mdash; two bands running at once. In the
+        gaps: a single Serge Gainsbourg cover show; a long rehearsal
+        stretch as The Lightermen that never quite ignited; covering bass
+        for Black Peaches with Robert Smoughton on a tour that took in
+        Green Man and Glastonbury.
+      </p>
+      <p>
+        Now things have come full circle. Sicamore is back. And The
+        Naciente Quartet, I hope, shall return.
+      </p>
     </main>
-    <footer>
-      <a
-        href="https://github.com/gavinhousley"
-        aria-label="Visit my GitHub profile"
-        target="_blank"
-        rel="noopener noreferrer"
-        ><i class="fab fa-github"></i>
-      </a>
-      <a href="mailto:gavinhousley@gmail.com">gavinhousley@gmail.com</a>
-      <a
-        href="https://linkedin.com/in/gavinhousley"
-        aria-label="Visit my LinkedIn profile"
-        target="_blank"
-        rel="noopener noreferrer"
-        ><i class="fab fa-linkedin"></i
-      ></a>
-    </footer>
-    <script src="main.js"></script>
+
     <script src="audio.js"></script>
     <script src="visualiser.js"></script>
     <script src="player.js"></script>

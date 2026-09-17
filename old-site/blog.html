@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./images/favicon/favicon-16x16.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="./images/favicon/apple-touch-icon.png"
+    />
+    <title>Gavin Housley</title>
+    <link rel="stylesheet" href="main.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+  </head>
+
+  <body>
+    <header>
+      <a href="home.html" class="logo-link">
+        <h1 class="initials">GH</h1>
+      </a>
+      <button class="burger" aria-label="Toggle menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav id="main-nav">
+        <ul>
+          <li><a href="home.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="code.html" id="code-link">Code</a></li>
+          <li><a href="art.html">Art</a></li>
+          <li><a href="music.html">Music</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="links.html">Links</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <section id="media">
+        <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+        <div id="blog-container"></div>
+      </section>
+    </main>
+    <footer>
+      <a
+        href="https://github.com/gavinhousley"
+        aria-label="Visit my GitHub profile"
+        target="_blank"
+        rel="noopener noreferrer"
+        ><i class="fab fa-github"></i>
+      </a>
+      <a href="mailto:gavinhousley@gmail.com">gavinhousley@gmail.com</a>
+      <a
+        href="https://linkedin.com/in/gavinhousley"
+        aria-label="Visit my LinkedIn profile"
+        target="_blank"
+        rel="noopener noreferrer"
+        ><i class="fab fa-linkedin"></i
+      ></a>
+    </footer>
+    <script src="main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="blog.js"></script>
+  </body>
+</html>
