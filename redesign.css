@@ -451,6 +451,11 @@ img {
   margin: 0;
 }
 
+/* Code cards: title + text sit above the image */
+#code .card p {
+  margin-bottom: 28px;
+}
+
 .card a {
   text-decoration: none;
   color: inherit;
